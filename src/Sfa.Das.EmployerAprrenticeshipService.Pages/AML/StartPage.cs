@@ -4,8 +4,9 @@
     using SpecBind.Pages;
 
 
+
     [PageNavigation("/")]
-    public class BasePage : Shared.BasePage
+    public class StartPage : Shared.BasePage
     {
         [ElementLocator(Id = "username")]
         public IWebElement UserNameBox { get; set; }

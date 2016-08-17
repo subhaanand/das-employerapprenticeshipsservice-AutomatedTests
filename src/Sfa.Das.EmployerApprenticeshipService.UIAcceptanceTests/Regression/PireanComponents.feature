@@ -6,5 +6,5 @@
 Scenario: LoadPireanPage
 	Given I load Pirean
 	When I refresh the page
-	Then Pirean Login Page is Titled "Login"
-	And I see the Register Button	
+	Then Pirean Login Page is Titled "Sign in"
+	

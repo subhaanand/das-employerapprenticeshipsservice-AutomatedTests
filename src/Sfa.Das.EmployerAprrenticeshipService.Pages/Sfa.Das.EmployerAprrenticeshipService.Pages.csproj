@@ -127,7 +127,6 @@
     <Compile Include="Shared\SharedTemplatePage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

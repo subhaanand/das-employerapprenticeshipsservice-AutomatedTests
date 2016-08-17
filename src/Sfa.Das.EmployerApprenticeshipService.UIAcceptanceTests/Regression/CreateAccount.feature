@@ -61,3 +61,6 @@ Scenario: Create Employer Account
 	Then I am on the EmployerSummary page
 	When I choose YesOption
 	And I choose ContinueButton
+
+Scenario: Load Start Page
+Given I navigated to the Start page

@@ -10,9 +10,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean
     {
         private IWebDriver Driver = new ChromeDriver();
         private int waitPeriod = Int32.Parse(ConfigurationManager.AppSettings["WaitinSeconds"]);
-
-
-
         #region Common Methods
         public void findRegisterLink()
         {
@@ -61,7 +58,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean
 
         public void expectedPireanPageTitle(string expectedTitle)
         {
-            string ActualPireanPageTitle = Driver.FindElement(By.ClassName("pageTitle")).Text;
+            string ActualPireanPageTitle = Driver.FindElement(By.ClassName("heading-large")).Text;
             Assert.AreEqual(expectedTitle, ActualPireanPageTitle);
         }
         #endregion

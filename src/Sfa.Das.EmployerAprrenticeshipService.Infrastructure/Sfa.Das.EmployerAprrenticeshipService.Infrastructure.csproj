@@ -126,14 +126,13 @@
     <Compile Include="Steps\PireanComponentsSteps.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Sfa.Das.EmployerAprrenticeshipService.Pages\Sfa.Das.EmployerAprrenticeshipService.Pages.csproj">
       <Project>{c49b1a74-cc00-4488-bc9e-2585a5df3005}</Project>
       <Name>Sfa.Das.EmployerAprrenticeshipService.Pages</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
