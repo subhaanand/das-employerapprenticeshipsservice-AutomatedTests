@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E4EBBD05-4C79-43A4-BFE2-A0F997134304}</ProjectGuid>
+    <ProjectGuid>{7D8AA35D-6532-42A6-A279-77D08E8D90D1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Levy_Infrastructure</RootNamespace>
-    <AssemblyName>Levy_Infrastructure</AssemblyName>
+    <RootNamespace>Sfa.DAS.Levy.UIAcceptanceTests</RootNamespace>
+    <AssemblyName>Sfa.DAS.Levy.UIAcceptanceTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
