@@ -70,12 +70,12 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("LoadPireanPage")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Login")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PireanComponents")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BugRetest")]
-        public virtual void LoadPireanPage()
+        public virtual void Login()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LoadPireanPage", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login", new string[] {
                         "BugRetest"});
 #line 6
 this.ScenarioSetup(scenarioInfo);

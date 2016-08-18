@@ -3,7 +3,7 @@
 	My tests must pass consistently
 
 @BugRetest
-Scenario: LoadPireanPage
+Scenario: Login
 	Given I login Pirean
 	
 	

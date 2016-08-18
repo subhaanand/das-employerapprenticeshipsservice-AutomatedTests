@@ -106,24 +106,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AML\CreateInvitationPage.cs" />
-    <Compile Include="AML\EmployerAccountViewPage.cs" />
-    <Compile Include="AML\EmployerGatewayPage.cs" />
-    <Compile Include="AML\EmployerSummaryPage.cs" />
-    <Compile Include="AML\GatewayLoginPage.cs" />
-    <Compile Include="AML\GovernmentGatewayConfirmPage.cs" />
-    <Compile Include="AML\InformGuidancePage.cs" />
-    <Compile Include="AML\ManageTeamMemberPage.cs" />
-    <Compile Include="AML\MemberInvite.cs" />
-    <Compile Include="AML\SearchForCompanyPage.cs" />
-    <Compile Include="AML\StartPage.cs" />
-    <Compile Include="AML\TeamMemberViewPage.cs" />
-    <Compile Include="AML\TeamViewPage.cs" />
-    <Compile Include="AML\VerifyEmployerPage.cs" />
-    <Compile Include="AML\ViewTransactionPage.cs" />
-    <Compile Include="Pirean\PireanLoginPage.cs" />
+    <Compile Include="Pirean\LoginPage.cs" />
     <Compile Include="Pirean\PireanRegisterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AML\ServiceLandingPage.cs" />
     <Compile Include="Shared\SharedTemplatePage.cs" />
   </ItemGroup>
   <ItemGroup>

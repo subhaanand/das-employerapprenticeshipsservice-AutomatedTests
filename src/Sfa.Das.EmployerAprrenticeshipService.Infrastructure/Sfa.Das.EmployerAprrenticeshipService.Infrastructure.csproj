@@ -119,6 +119,7 @@
     <Compile Include="Selenium\BrowserStackApi.cs" />
     <Compile Include="Selenium\IBrowserStackApi.cs" />
     <Compile Include="Services\ConsoleLogger.cs" />
+    <Compile Include="Services\CoreSettings.cs" />
     <Compile Include="Services\ExceptionExtensions.cs" />
     <Compile Include="Services\ILog.cs" />
     <Compile Include="Services\IRetryWebRequests.cs" />
