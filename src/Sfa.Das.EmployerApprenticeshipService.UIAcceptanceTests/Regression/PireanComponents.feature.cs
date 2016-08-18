@@ -72,11 +72,11 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Login")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PireanComponents")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BugRetest")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Access")]
         public virtual void Login()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login", new string[] {
-                        "BugRetest"});
+                        "Access"});
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7

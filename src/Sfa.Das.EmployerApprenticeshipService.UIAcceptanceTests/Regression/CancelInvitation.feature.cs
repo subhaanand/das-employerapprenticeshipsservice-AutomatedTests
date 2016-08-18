@@ -72,11 +72,11 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Cancel Invitation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CancelInvitation")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Invitations")]
         public virtual void CancelInvitation()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Invitation", new string[] {
-                        "Regression"});
+                        "Invitations"});
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7

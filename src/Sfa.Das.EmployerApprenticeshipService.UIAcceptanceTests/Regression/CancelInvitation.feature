@@ -2,7 +2,7 @@
 In order to change my mind about membership
 	I need to be able to cancel an invitation provided it has not been accepted
 
-@Regression
+@Invitations
 Scenario: Cancel Invitation
 Given I navigated to the Start page
 Then I enter data

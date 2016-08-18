@@ -2,7 +2,7 @@
 	In order to be able to add people to my team
 	I need to invite team members
 
-@Regression
+@Invitations
 Scenario: Invite Member
 Given I navigated to the Start page
 Then I enter data

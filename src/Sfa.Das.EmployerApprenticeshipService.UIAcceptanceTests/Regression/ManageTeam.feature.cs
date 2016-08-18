@@ -72,11 +72,11 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add Team Member")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageTeam")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TeamManagement")]
         public virtual void AddTeamMember()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Team Member", new string[] {
-                        "mytag"});
+                        "TeamManagement"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8

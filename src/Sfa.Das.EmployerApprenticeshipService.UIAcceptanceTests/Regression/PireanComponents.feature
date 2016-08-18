@@ -2,7 +2,7 @@
 	In order to ensure IDAMS solution is functional
 	My tests must pass consistently
 
-@BugRetest
+@Access
 Scenario: Login
 	Given I login Pirean
 	

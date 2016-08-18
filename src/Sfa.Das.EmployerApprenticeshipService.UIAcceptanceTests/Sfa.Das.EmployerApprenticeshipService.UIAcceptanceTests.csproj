@@ -118,11 +118,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CancelInvitation.feature</DependentUpon>
     </Compile>
-    <Compile Include="Regression\CreateAccount2.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CreateAccount2.feature</DependentUpon>
-    </Compile>
     <Compile Include="Regression\CreateDASAccount.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,10 +150,6 @@
     <None Include="Regression\CancelInvitation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CancelInvitation.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Regression\CreateAccount2.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CreateAccount2.feature.cs</LastGenOutput>
     </None>
     <None Include="Regression\CreateDASAccount.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

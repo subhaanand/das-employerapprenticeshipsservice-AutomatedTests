@@ -8,60 +8,32 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean
 {
     public class PireanLoginPage
     {
-        private IWebDriver Driver = new ChromeDriver();
-        private int waitPeriod = Int32.Parse(ConfigurationManager.AppSettings["WaitinSeconds"]);
-        #region Common Methods
-        public void findRegisterLink()
+        private readonly IWebDriver Driver;
+
+        public PireanLoginPage(IWebDriver driver)
         {
-            try
+            this.Driver = driver;
+        }
+
+            public IWebElement UsernameBox
             {
-                bool isRegisterlinkDisplayed = Driver.FindElement(By.CssSelector("#navbar-collapse > ul > li > a")).Displayed;
-
+                get
+                {
+                    var UsernameBox = Driver.FindElement(By.Id("email"));
+                    return UsernameBox;
+                }
             }
-            catch (Exception)
+            public IWebElement PasswordBox
             {
-                Console.WriteLine("Register Link not found");
-                throw;
-
+                get
+                {
+                    var PasswordBox = Driver.FindElement(By.Id("password"));
+                    return PasswordBox;
+                }
             }
 
         }
 
-
-        public void loginPirean(string username, string password)
-        {
-            LoadStartPage();
-
-            Driver.FindElement(By.Id("email")).SendKeys(username);
-            Driver.FindElement(By.Id("password")).SendKeys(password);
-            Driver.FindElement(By.TagName("button")).Click();
-        }
-        public void LoadStartPage()
-        {
-            Driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["baseUrl"]);
-        }
-
-        public void quit()
-        {
-            Driver.Quit();
-        }
-
-        public void wait()
-        {
-            Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(waitPeriod));
-        }
-
-        public void pageRefresh()
-        {
-            Driver.Navigate().Refresh();
-        }
-
-        public void expectedPireanPageTitle(string expectedTitle)
-        {
-            string ActualPireanPageTitle = Driver.FindElement(By.ClassName("heading-large")).Text;
-            Assert.AreEqual(expectedTitle, ActualPireanPageTitle);
-        }
-        #endregion
 
     }
-}
+
