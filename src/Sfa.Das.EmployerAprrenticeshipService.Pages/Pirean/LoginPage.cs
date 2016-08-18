@@ -31,6 +31,14 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean
                     return PasswordBox;
                 }
             }
+            public IWebElement LoginButton
+        {
+            get
+            {
+                var LoginButton = Driver.FindElement(By.TagName("button"));
+                return LoginButton;
+            }
+        }
 
         }
 

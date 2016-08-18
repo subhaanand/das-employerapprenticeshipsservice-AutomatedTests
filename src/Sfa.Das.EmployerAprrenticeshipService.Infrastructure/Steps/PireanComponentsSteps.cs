@@ -6,8 +6,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps
     [Binding]
     public class PireanComponentsSteps
     {
-        NavigationSteps.CoreSteps _navigationsteps = new NavigationSteps.CoreSteps();
-        
+        CoreSteps _navigationsteps = new CoreSteps();        
         
         [Given(@"I login Pirean")]
         public void GivenILoginPirean()

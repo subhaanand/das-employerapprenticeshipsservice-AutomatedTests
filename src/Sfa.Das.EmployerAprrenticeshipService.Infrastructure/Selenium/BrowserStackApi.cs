@@ -58,11 +58,11 @@
             }
         }
 
-        public string FindSessionId()
+        public string findsessionid()
         {
-            var sessionId = (_browser.Driver() as RemoteWebDriver)?.SessionId;
+           var sessionid = (_browser.driver() as remotewebdriver)?.sessionid;
 
-            return sessionId?.ToString();
+           return sessionid?.tostring();
         }
 
         public NetworkCredential FindNetworkCredential()

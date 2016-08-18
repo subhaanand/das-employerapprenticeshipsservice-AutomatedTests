@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.PhantomJS;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationS
 {
     public  class CoreSteps
     {
-        private IWebDriver Driver = new ChromeDriver();        
+        private IWebDriver Driver = new ChromeDriver();      
         public string username = ConfigurationManager.AppSettings["PireanUsername"];
         public string password = ConfigurationManager.AppSettings["PireanPassword"];
         
@@ -28,7 +29,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationS
             PireanLoginPage LoginPage = new PireanLoginPage(Driver);
             LoginPage.UsernameBox.SendKeys(username);
             LoginPage.PasswordBox.SendKeys(password);
-            Driver.FindElement(By.TagName("button")).Click();
+            LoginPage.LoginButton.Click();
         }
 
         public void CloseBrowser()
