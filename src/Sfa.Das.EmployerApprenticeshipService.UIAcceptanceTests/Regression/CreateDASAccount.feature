@@ -4,6 +4,5 @@
 
 @Accounts
 Scenario: Create DAS Account
-	Given I login Pirean
-	When I Create a DAS Account
+	Given I Create a DAS Account
 	

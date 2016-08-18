@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.PhantomJS;
+using Sfa.Das.EmployerAprrenticeshipService.Pages;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean;
 using System;
 using System.Collections.Generic;
@@ -43,5 +44,20 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationS
         //    StringAssert.Equals(actualTtile, expectedTitle);
             
         //}
+
+        public void CreateADasAccount()
+        {
+            LoginPirean();
+            ClickCreateAccountButton();
+        }
+        public void ClickCreateAccountButton()
+        {
+            ///LoginPirean();
+            ServiceLandingPage ServicePage = new ServiceLandingPage(Driver);
+            Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            ServicePage.CreateAccountButton.Click();
+
+
+        }
     }
 }

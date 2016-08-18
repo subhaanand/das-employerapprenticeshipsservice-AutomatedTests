@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationSteps;
 using Sfa.Das.EmployerAprrenticeshipService.Pages;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean;
 using System;
@@ -8,19 +9,20 @@ using TechTalk.SpecFlow;
 
 namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps
 {
-
+    
 
     [Binding]
     public class CreateDASAccountSteps
     {
-        [BeforeScenario]
-
+        CoreSteps _navigationsteps = new CoreSteps();
+        
         [Given(@"I Create a DAS Account")]
         [When(@"I Create a DAS Account")]
+        [Then(@"I Create a DAS Account")]
         public void WhenICreateADASAccount()
         {
 
-            //TODO
+            _navigationsteps.CreateADasAccount();
 
         }
 

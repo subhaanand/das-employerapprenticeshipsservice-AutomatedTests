@@ -79,9 +79,7 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.Given("I login Pirean", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
- testRunner.When("I Create a DAS Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I Create a DAS Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             this.ScenarioCleanup();
         }
