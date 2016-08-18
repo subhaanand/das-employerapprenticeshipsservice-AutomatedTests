@@ -1,12 +1,14 @@
 ﻿namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
 {
     using OpenQA.Selenium;
+    using Shared;
     using SpecBind.Pages;
+    
 
 
 
     [PageNavigation("/")]
-    public class StartPage : Shared.BasePage
+    public class StartPage : BasePage
     {
         [ElementLocator(Id = "username")]
         public IWebElement UserNameBox { get; set; }

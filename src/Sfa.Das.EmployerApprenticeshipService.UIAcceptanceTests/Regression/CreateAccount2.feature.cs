@@ -24,7 +24,7 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "CreateAccount.feature"
+#line 1 "CreateAccount2.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
@@ -113,11 +113,11 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("I enter data", ((string)(null)), table2, "Then ");
 #line 18
  testRunner.When("I choose LoginButton", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
+#line 19
  testRunner.Then("I wait to see CreateNewEmployerAccount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 21
+#line 20
  testRunner.When("I choose CreateNewEmployerAccount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 22
+#line 21
  testRunner.Then("I am on the InformGuidance page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -128,21 +128,21 @@ this.ScenarioSetup(scenarioInfo);
                         "PageHeading",
                         "equals",
                         "Register your apprenticeship account"});
-#line 23
+#line 22
  testRunner.And("I see", ((string)(null)), table3, "And ");
-#line 26
+#line 25
  testRunner.When("I choose StartAccountCreationButton", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
+#line 26
  testRunner.And("I wait for the view to become active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
+#line 27
  testRunner.Then("I am on the GovernmentGatewayConfirm page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 29
+#line 28
  testRunner.When("I choose YesOption", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
+#line 29
  testRunner.And("I choose ContinueButton", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
+#line 30
  testRunner.Then("I am on the SearchForCompany page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
+#line 31
  testRunner.When("I wait for the view to become active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -151,11 +151,11 @@ this.ScenarioSetup(scenarioInfo);
             table4.AddRow(new string[] {
                         "CompanyHouseNumberTextBox",
                         "10284352"});
-#line 33
+#line 32
  testRunner.And("I enter data", ((string)(null)), table4, "And ");
-#line 36
+#line 35
  testRunner.When("I choose ContinueButton", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
+#line 36
  testRunner.And("I wait for the view to become active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -170,11 +170,11 @@ this.ScenarioSetup(scenarioInfo);
                         "AddCompanyToContractButton",
                         "exists",
                         "true"});
-#line 38
+#line 37
  testRunner.Then("I see", ((string)(null)), table5, "Then ");
-#line 42
+#line 41
  testRunner.When("I choose AddCompanyToContractButton", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 43
+#line 42
  testRunner.And("I wait for the view to become active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -193,7 +193,7 @@ this.ScenarioSetup(scenarioInfo);
                         "HMRCSignInButton",
                         "exists",
                         "true"});
-#line 44
+#line 43
  testRunner.Then("I see", ((string)(null)), table6, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -205,11 +205,11 @@ this.ScenarioSetup(scenarioInfo);
             table7.AddRow(new string[] {
                         "HMRCPasswordBox",
                         "password1"});
-#line 49
+#line 48
  testRunner.And("I enter data", ((string)(null)), table7, "And ");
-#line 53
+#line 52
  testRunner.When("I choose HMRCSignInButton", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 54
+#line 53
  testRunner.And("I wait for the view to become active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -220,17 +220,17 @@ this.ScenarioSetup(scenarioInfo);
                         "GrantAuthorityButton",
                         "exists",
                         "true"});
-#line 55
+#line 54
  testRunner.Then("I see", ((string)(null)), table8, "Then ");
-#line 59
+#line 58
  testRunner.When("I choose GrantAuthorityButton", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 60
+#line 59
  testRunner.And("I wait for the view to become active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
+#line 60
  testRunner.Then("I am on the EmployerSummary page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 62
+#line 61
  testRunner.When("I choose YesOption", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 63
+#line 62
  testRunner.And("I choose ContinueButton", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -242,9 +242,9 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void LoadStartPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Load Start Page", ((string[])(null)));
-#line 65
+#line 64
 this.ScenarioSetup(scenarioInfo);
-#line 66
+#line 65
 testRunner.Given("I navigated to the Start page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             this.ScenarioCleanup();

@@ -12,11 +12,10 @@ Scenario: Create Employer Account
 	| PasswordBox | exists | true  |
 	| LoginButton | exists | true  |
 	Then I enter data
-	| Field       | Value                  |
+	| Field       | Value						|
 	| UserNameBox | sfa.aml.test+Jane@gmail.com |
-	| PasswordBox | Office01               |
-	When I choose LoginButton
-	
+	| PasswordBox | Office01					|
+	When I choose LoginButton	
 	Then I wait to see CreateNewEmployerAccount
 	When I choose CreateNewEmployerAccount
 	Then I am on the InformGuidance page

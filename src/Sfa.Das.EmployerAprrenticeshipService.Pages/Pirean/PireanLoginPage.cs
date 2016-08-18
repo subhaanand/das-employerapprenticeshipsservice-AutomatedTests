@@ -32,7 +32,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean
         {
             LoadStartPage();
 
-            Driver.FindElement(By.Id("username")).SendKeys(username);
+            Driver.FindElement(By.Id("email")).SendKeys(username);
             Driver.FindElement(By.Id("password")).SendKeys(password);
             Driver.FindElement(By.TagName("button")).Click();
         }

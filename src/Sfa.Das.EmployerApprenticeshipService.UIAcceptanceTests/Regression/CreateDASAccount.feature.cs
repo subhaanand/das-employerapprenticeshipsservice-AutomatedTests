@@ -19,20 +19,19 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.DeploymentItemAttribute("SpecBind.Selenium.dll")]
-    public partial class PireanComponentsFeature
+    public partial class CreateDASAccountFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "PireanComponents.feature"
+#line 1 "CreateDASAccount.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PireanComponents", "\tIn order to ensure IDAMS solution is functional\r\n\tMy tests must pass consistentl" +
-                    "y", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CreateDASAccount", "\tIn order to access my Levy account\r\n\tI need to be able to create a DAS account", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,9 +46,9 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "PireanComponents")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "CreateDASAccount")))
             {
-                Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression.PireanComponentsFeature.FeatureSetup(null);
+                Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression.CreateDASAccountFeature.FeatureSetup(null);
             }
         }
         
@@ -70,17 +69,21 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("LoadPireanPage")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PireanComponents")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BugRetest")]
-        public virtual void LoadPireanPage()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create DAS Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CreateDASAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        public virtual void CreateDASAccount()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LoadPireanPage", new string[] {
-                        "BugRetest"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create DAS Account", new string[] {
+                        "mytag"});
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("I login Pirean", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
+ testRunner.When("I Create a DAS Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 9
+ testRunner.Then("An account should be \"created\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

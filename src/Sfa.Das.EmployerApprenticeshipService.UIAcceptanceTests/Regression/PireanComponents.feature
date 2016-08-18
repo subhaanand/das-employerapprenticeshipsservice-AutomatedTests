@@ -4,7 +4,6 @@
 
 @BugRetest
 Scenario: LoadPireanPage
-	Given I load Pirean
-	When I refresh the page
-	Then Pirean Login Page is Titled "Sign in"
+	Given I login Pirean
+	
 	
