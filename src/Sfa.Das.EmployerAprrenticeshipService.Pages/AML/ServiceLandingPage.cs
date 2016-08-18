@@ -3,16 +3,16 @@ using OpenQA.Selenium;
 using System.Configuration;
 using SpecBind.Selenium;
 using OpenQA.Selenium.Chrome;
+using Sfa.Das.EmployerAprrenticeshipService.Pages.Shared;
 
 namespace Sfa.Das.EmployerAprrenticeshipService.Pages
 {
-    public class ServiceLandingPage
+    public class ServiceLandingPage :BasePage
     {
-        private readonly IWebDriver Driver;
-        public ServiceLandingPage(IWebDriver driver)
+        public ServiceLandingPage(IWebDriver driver) : base(driver)
         {
-            this.Driver = driver;
-        }
+           
+        }       
 
         public IWebElement CreateAccountButton
         {

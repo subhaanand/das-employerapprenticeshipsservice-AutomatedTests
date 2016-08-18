@@ -5,15 +5,12 @@
 
     public abstract class BasePage
     {
+        public readonly IWebDriver Driver;
+        public BasePage(IWebDriver driver)
+        {
+            this.Driver = driver;
+        }
 
-
-        #region Common ELements
-        [ElementLocator(Text = "Sign In/ Register")]
-        public IWebElement SignInLink { get; set; }
-
-        [ElementLocator(Text = "Log out")]
-        public IWebElement Logout { get; set; }
-
-        #endregion
+       
     }
 }

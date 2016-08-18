@@ -52,12 +52,9 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationS
         }
         public void ClickCreateAccountButton()
         {
-            ///LoginPirean();
             ServiceLandingPage ServicePage = new ServiceLandingPage(Driver);
             Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             ServicePage.CreateAccountButton.Click();
-
-
         }
     }
 }
