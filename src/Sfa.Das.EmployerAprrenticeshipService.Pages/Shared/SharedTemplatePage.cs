@@ -11,6 +11,14 @@
             this.Driver = driver;
         }
 
+        private IWebElement LogoutLink
+        {
+            get
+            {
+                var Logoutlink = Driver.FindElement(By.LinkText("Log out"));
+                return Logoutlink;
+            }
+        }
        
     }
 }
