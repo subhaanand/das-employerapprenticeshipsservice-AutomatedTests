@@ -4,21 +4,25 @@ using System.Configuration;
 using SpecBind.Selenium;
 using OpenQA.Selenium.Chrome;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.Shared;
+using OpenQA.Selenium.Support.UI;
 
 namespace Sfa.Das.EmployerAprrenticeshipService.Pages
 {
     public class ServiceLandingPage :BasePage
     {
+
         public ServiceLandingPage(IWebDriver driver) : base(driver)
         {
            
-        }       
+        }   
+          
 
         public IWebElement CreateAccountButton
         {
             get
             {
-                var CreateAccountButton = Driver.FindElement(By.ClassName("button"));
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var CreateAccountButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.ClassName("button")));
                 return CreateAccountButton;
             }
         }
