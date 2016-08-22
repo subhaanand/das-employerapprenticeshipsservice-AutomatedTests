@@ -1,4 +1,4 @@
-﻿namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Services
+﻿namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Services
 {
     using System;
 

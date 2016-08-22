@@ -125,9 +125,6 @@
     <Compile Include="Services\ILog.cs" />
     <Compile Include="Services\IRetryWebRequests.cs" />
     <Compile Include="Services\WebRequestRetryService.cs" />
-    <Compile Include="Steps\CoreSettings\NavigationSteps.cs" />
-    <Compile Include="Steps\CreateDASAccountSteps.cs" />
-    <Compile Include="Steps\PireanComponentsSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
