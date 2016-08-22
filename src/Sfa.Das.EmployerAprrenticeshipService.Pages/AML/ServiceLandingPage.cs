@@ -14,8 +14,8 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages
         public ServiceLandingPage(IWebDriver driver) : base(driver)
         {
            
-        }   
-          
+        } 
+                  
 
         public IWebElement CreateAccountButton
         {
@@ -26,6 +26,18 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages
                 return CreateAccountButton;
             }
         }
+
+        public IWebElement AccountAdded
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var AccountAdded = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("#content > div:nth-child(2) > div > div > div.responsive-tbody > div > div:nth-child(1) > div:nth-child(1)")));
+                return AccountAdded;
+            }
+        }
+
+        
 
     }
 }

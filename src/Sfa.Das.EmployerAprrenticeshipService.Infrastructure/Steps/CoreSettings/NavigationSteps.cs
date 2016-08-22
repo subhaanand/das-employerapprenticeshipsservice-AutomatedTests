@@ -64,21 +64,22 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationS
             VerifyCompany();
             LoginHmrcCredentials();
             GrantAuthority();//empref restriction means this can only run once
-            //DenyAuthority();
-            //ApproveAccountCreation();
-            DenyAccountCreation();
+            /*DenyAuthority();*/
+            ApproveAccountCreation();
+            //DenyAccountCreation();
+            CheckAccountNameAdded();
 
         }
         public void ClickCreateAccountButton()
         {
-            ServiceLandingPage ServicePage = new ServiceLandingPage(Driver);          
-            ServicePage.CreateAccountButton.Click();
+            ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);          
+            servicelandingpage.CreateAccountButton.Click();
         }
 
         public void ClickStartButton()
         {
-            InformPage informPage = new InformPage(Driver);
-            informPage.StartButton.Click();
+            InformPage informpage = new InformPage(Driver);
+            informpage.StartButton.Click();
         }
 
         public void ConfirmGatewayCredentials()
@@ -138,6 +139,13 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationS
             StringAssert.Contains(CompanyNameExpected, actualcompanynamedisplayed);
             accountcreationapprovalpage.NoOption.Click();
             accountcreationapprovalpage.ContinueButton.Click();
+        }
+
+        public void CheckAccountNameAdded()
+        {
+            ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
+            string accountadded = servicelandingpage.AccountAdded.Text;
+            StringAssert.Contains(CompanyNameExpected, accountadded);
         }
     }
 }
