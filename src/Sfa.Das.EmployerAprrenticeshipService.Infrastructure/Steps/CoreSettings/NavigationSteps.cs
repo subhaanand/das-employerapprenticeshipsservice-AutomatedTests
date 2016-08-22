@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
 using OpenQA.Selenium.PhantomJS;
 using OpenQA.Selenium.Support.UI;
 using Sfa.Das.EmployerAprrenticeshipService.Pages;
@@ -18,7 +19,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationS
 {
     public  class CoreSteps
     {
-        private IWebDriver Driver = new FirefoxDriver();      
+        private IWebDriver Driver = new ChromeDriver();      
         public string username = ConfigurationManager.AppSettings["PireanUsername"];
         public string password = ConfigurationManager.AppSettings["PireanPassword"];
         public string CompanyNumber = ConfigurationManager.AppSettings["CompanyNumber"];
@@ -62,8 +63,10 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationS
             Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));//wait for company house to return
             VerifyCompany();
             LoginHmrcCredentials();
-            //GrantAuthority();//empref restriction means this can only run once
+            GrantAuthority();//empref restriction means this can only run once
             //DenyAuthority();
+            //ApproveAccountCreation();
+            DenyAccountCreation();
 
         }
         public void ClickCreateAccountButton()
@@ -120,5 +123,21 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationS
             hmrcresponsepage.DenyButton.Click();
         }
 
+        public void ApproveAccountCreation()
+        {
+            AccountCreationApprovalPage accountcreationapprovalpage = new AccountCreationApprovalPage(Driver);
+            string actualcompanynamedisplayed = accountcreationapprovalpage.CompanyNameForAccount.Text;
+            StringAssert.Contains(CompanyNameExpected, actualcompanynamedisplayed);
+            accountcreationapprovalpage.YesOption.Click();
+            accountcreationapprovalpage.ContinueButton.Click();
+        }
+        public void DenyAccountCreation()
+        {
+            AccountCreationApprovalPage accountcreationapprovalpage = new AccountCreationApprovalPage(Driver);
+            string actualcompanynamedisplayed = accountcreationapprovalpage.CompanyNameForAccount.Text;
+            StringAssert.Contains(CompanyNameExpected, actualcompanynamedisplayed);
+            accountcreationapprovalpage.NoOption.Click();
+            accountcreationapprovalpage.ContinueButton.Click();
+        }
     }
 }
