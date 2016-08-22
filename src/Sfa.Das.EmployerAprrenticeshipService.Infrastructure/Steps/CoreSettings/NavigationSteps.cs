@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.PhantomJS;
 using OpenQA.Selenium.Support.UI;
 using Sfa.Das.EmployerAprrenticeshipService.Pages;
@@ -17,7 +18,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationS
 {
     public  class CoreSteps
     {
-        private IWebDriver Driver = new ChromeDriver();      
+        private IWebDriver Driver = new FirefoxDriver();      
         public string username = ConfigurationManager.AppSettings["PireanUsername"];
         public string password = ConfigurationManager.AppSettings["PireanPassword"];
         public string CompanyNumber = ConfigurationManager.AppSettings["CompanyNumber"];
@@ -61,8 +62,8 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationS
             Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));//wait for company house to return
             VerifyCompany();
             LoginHmrcCredentials();
-            //GrantAuthority();
-            DenyAuthority();
+            //GrantAuthority();//empref restriction means this can only run once
+            //DenyAuthority();
 
         }
         public void ClickCreateAccountButton()
