@@ -142,7 +142,6 @@
       <DependentUpon>ViewTeamMembers.feature</DependentUpon>
     </Compile>
     <Compile Include="Steps\CoreSettings\NavigationSteps.cs" />
-    <Compile Include="Steps\PireanComponentsSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
