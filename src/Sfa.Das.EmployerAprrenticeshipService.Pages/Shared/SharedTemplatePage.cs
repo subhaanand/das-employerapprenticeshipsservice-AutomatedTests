@@ -8,7 +8,9 @@
         public readonly IWebDriver Driver;
         public BasePage(IWebDriver driver)
         {
-            this.Driver = driver;
+
+          Driver = driver;
+            
         }
 
         private IWebElement LogoutLink
