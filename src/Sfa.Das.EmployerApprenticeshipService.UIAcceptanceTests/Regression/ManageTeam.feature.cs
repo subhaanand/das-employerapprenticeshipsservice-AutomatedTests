@@ -69,24 +69,54 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void InviteMember(string userEmail, string status, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "TeamManagement"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invite Member", @__tags);
+#line 9
+this.ScenarioSetup(scenarioInfo);
+#line 10
+testRunner.Given("I have a DAS Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 11
+testRunner.When(string.Format("I invite \"{0}\"", userEmail), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
+testRunner.Then(string.Format("\"{0}\" is added to list of Team Members", userEmail), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 13
+testRunner.And(string.Format("invite status for\"{0}\" is \"{1}\"", userEmail, status), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add Team Member")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Invite Member: sfa.aml.test+JohnDoe@gmail.com")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageTeam")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TeamManagement")]
-        public virtual void AddTeamMember()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "sfa.aml.test+JohnDoe@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:User Email", "sfa.aml.test+JohnDoe@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status", "pending")]
+        public virtual void InviteMember_Sfa_Aml_TestJohnDoeGmail_Com()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Team Member", new string[] {
+            this.InviteMember("sfa.aml.test+JohnDoe@gmail.com", "pending", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Resend Invitation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageTeam")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TeamManagement")]
+        public virtual void ResendInvitation()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Resend Invitation", new string[] {
                         "TeamManagement"});
-#line 7
+#line 19
 this.ScenarioSetup(scenarioInfo);
-#line 8
- testRunner.Given("I have entered 50 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
- testRunner.And("I have entered 70 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
- testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
- testRunner.Then("the result should be 120 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 20
+ testRunner.Given("invite status for\"<User Email>\" is \"<status>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             this.ScenarioCleanup();
         }

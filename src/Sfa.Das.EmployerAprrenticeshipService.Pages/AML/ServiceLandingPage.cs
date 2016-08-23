@@ -27,6 +27,17 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages
             }
         }
 
+        public IWebElement StartButton
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var StartButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.ClassName("button-start")));
+                return StartButton;
+            }
+        }
+
+
         public IWebElement AccountAdded
         {
             get

@@ -1,13 +1,21 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.PhantomJS;
+using OpenQA.Selenium.Support.UI;
 using Sfa.Das.EmployerAprrenticeshipService.Pages;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.AML;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.NavigationSteps
+namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps.NavigationSteps
 {
     public  class CoreSteps
     {
@@ -27,7 +35,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         public void LoginPirean()
         {
             LoadStartPage();
-            ClickLoginButton();
             PireanLoginPage LoginPage = new PireanLoginPage(Driver);
             LoginPage.UsernameBox.SendKeys(username);
             LoginPage.PasswordBox.SendKeys(password);
@@ -58,21 +65,15 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             LoginHmrcCredentials();
             GrantAuthority();//empref restriction means this can only run once
             /*DenyAuthority();*/
-           ApproveAccountCreation();
+           // ApproveAccountCreation();
             //DenyAccountCreation();
-           CheckAccountNameAdded();
+           // CheckAccountNameAdded();
 
         }
         public void ClickCreateAccountButton()
         {
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);          
             servicelandingpage.CreateAccountButton.Click();
-        }
-
-        public void ClickLoginButton()
-        {
-            ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
-            servicelandingpage.StartButton.Click();
         }
 
         public void ClickStartButton()

@@ -107,9 +107,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="..\Sfa.Das.EmployerAprrenticeshipService.Infrastructure\Steps\PireanComponentsSteps.cs">
-      <Link>PireanComponentsSteps.cs</Link>
+      <Link>Steps\CoreSettings\PireanComponentsSteps.cs</Link>
     </Compile>
-    <Compile Include="CreateDASAccountSteps.cs" />
+    <Compile Include="Steps\CreateDASAccountSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regression\CancelInvitation.feature.cs">
       <AutoGen>True</AutoGen>
@@ -142,6 +142,7 @@
       <DependentUpon>ViewTeamMembers.feature</DependentUpon>
     </Compile>
     <Compile Include="Steps\CoreSettings\NavigationSteps.cs" />
+    <Compile Include="Steps\InviteTeamMemberSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
