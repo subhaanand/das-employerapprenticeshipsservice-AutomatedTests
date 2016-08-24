@@ -80,6 +80,8 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
                         "Regression"});
 #line 6
 this.ScenarioSetup(scenarioInfo);
+#line 7
+ testRunner.Given("I Create a DAS Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.Then("An account should be added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

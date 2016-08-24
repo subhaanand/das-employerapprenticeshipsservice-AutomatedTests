@@ -5,5 +5,6 @@
 @Access
 Scenario: Login
 	Given I login Pirean
+	Then I close Browser
 	
 	

@@ -29,7 +29,14 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Infrastructure.Steps
         {
             _navigationsteps.CloseBrowser();
         }
-       
+
+        [Then(@"I close Browser")]
+        public void ThenICloseBrowser()
+        {
+            _navigationsteps.Quit();
+        }
+
+
 
     }
 }

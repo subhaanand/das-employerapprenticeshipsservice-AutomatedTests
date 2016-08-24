@@ -4,6 +4,6 @@
 
 @EmployerAccounts @Regression
 Scenario: Create DAS Account
-	#Given I Create a DAS Account
+	Given I Create a DAS Account
 	Then An account should be added
 	
