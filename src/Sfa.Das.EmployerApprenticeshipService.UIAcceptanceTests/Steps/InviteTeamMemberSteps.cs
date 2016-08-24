@@ -6,28 +6,26 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
     [Binding]
     public class InviteTeamMemberSteps
     {
-        [Given(@"I have a DAS Account")]
-        public void GivenIHaveADASAccount()
+        [Given(@"I have an account")]
+        public void GivenIHaveAnAccount()
         {
             ScenarioContext.Current.Pending();
         }
         
-        [When(@"I invite ""(.*)""")]
-        public void WhenIInvite(string p0)
+        [When(@"I invite""(.*)"" to my team")]
+        public void WhenIInviteToMyTeam(string p0)
         {
             ScenarioContext.Current.Pending();
         }
         
-        [Then(@"""(.*)"" is added to list of Team Members")]
-        public void ThenIsAddedToListOfTeamMembers(string p0)
+        [When(@"give them ""(.*)"" as a role")]
+        public void WhenGiveThemAsARole(string p0)
         {
             ScenarioContext.Current.Pending();
         }
-
-        [Given(@"invite status for""(.*)"" is ""(.*)""")]
-        [When(@"invite status for""(.*)"" is ""(.*)""")]
-        [Then(@"invite status for""(.*)"" is ""(.*)""")]
-        public void ThenStatusIs(string p0)
+        
+        [Then(@"they are added to my team list")]
+        public void ThenTheyAreAddedToMyTeamList()
         {
             ScenarioContext.Current.Pending();
         }

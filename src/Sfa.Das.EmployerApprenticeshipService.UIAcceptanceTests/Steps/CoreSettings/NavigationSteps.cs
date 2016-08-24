@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.IE;
 using Sfa.Das.EmployerAprrenticeshipService.Pages;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.AML;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean;
@@ -11,7 +12,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
 {
     public  class CoreSteps
     {
-        private IWebDriver Driver = new ChromeDriver();      
+        private IWebDriver Driver = new InternetExplorerDriver();      
         public string username = ConfigurationManager.AppSettings["PireanUsername"];
         public string password = ConfigurationManager.AppSettings["PireanPassword"];
         public string CompanyNumber = ConfigurationManager.AppSettings["CompanyNumber"];
@@ -29,7 +30,9 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             LoadStartPage();
             ClickLoginButton();
             PireanLoginPage LoginPage = new PireanLoginPage(Driver);
+            LoginPage.UsernameBox.Clear();
             LoginPage.UsernameBox.SendKeys(username);
+            LoginPage.PasswordBox.Clear();
             LoginPage.PasswordBox.SendKeys(password);
             LoginPage.LoginButton.Click();
         }
@@ -60,7 +63,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             /*DenyAuthority();*/
            ApproveAccountCreation();
             //DenyAccountCreation();
-           CheckAccountNameAdded();
+           //CheckAccountNameAdded(); need to work out the correct wayu to locate the account name in list
 
         }
         public void ClickCreateAccountButton()
@@ -91,6 +94,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         public void SearchForCompany()
         {
             SearchForCompany searchforcompany = new SearchForCompany(Driver);
+            searchforcompany.CompanyHouseTextBox.Clear();
             searchforcompany.CompanyHouseTextBox.SendKeys(CompanyNumber);
             searchforcompany.ContinueButton.Click();
         }
@@ -100,13 +104,14 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             VerifyCompanyPage verifycompanypage = new VerifyCompanyPage(Driver);
             string companynamereturned = verifycompanypage.CompanyName.Text;
             StringAssert.Contains(CompanyNameExpected, companynamereturned);
-
             verifycompanypage.ContinueButton.Click();
         }
 
         public void LoginHmrcCredentials()
         {
             HMRCLoginPage hmrcpage = new HMRCLoginPage(Driver);
+            hmrcpage.UserNameTextBox.Clear();
+            hmrcpage.PasswordTextBox.Clear();
             hmrcpage.UserNameTextBox.SendKeys(HMRCUsername);
             hmrcpage.PasswordTextBox.SendKeys(HMRCPassword);
             hmrcpage.SignInButton.Click();
