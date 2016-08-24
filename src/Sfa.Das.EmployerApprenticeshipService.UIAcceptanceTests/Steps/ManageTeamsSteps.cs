@@ -17,5 +17,24 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
         {
             ScenarioContext.Current.Pending();
         }
+
+        [Then(@"they are added to my team list as ""(.*)""")]
+        public void ThenTheyAreAddedToMyTeamListAs(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [When(@"I cancel their invitation")]
+        public void WhenICancelTheirInvitation()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"they are removed from my team list")]
+        public void ThenTheyAreRemovedFromMyTeamList()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }

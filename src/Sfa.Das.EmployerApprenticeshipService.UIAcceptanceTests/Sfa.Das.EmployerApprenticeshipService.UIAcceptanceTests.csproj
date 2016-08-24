@@ -109,13 +109,13 @@
     <Compile Include="..\Sfa.Das.EmployerAprrenticeshipService.Infrastructure\Steps\PireanComponentsSteps.cs">
       <Link>Steps\CoreSettings\PireanComponentsSteps.cs</Link>
     </Compile>
-    <Compile Include="Steps\CreateDASAccountSteps.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Regression\CancelInvitation.feature.cs">
+    <Compile Include="HMRCScenarios\Scenario_1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CancelInvitation.feature</DependentUpon>
+      <DependentUpon>Scenario_1.feature</DependentUpon>
     </Compile>
+    <Compile Include="Steps\CreateDASAccountSteps.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regression\CreateDASAccount.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -138,11 +138,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
-    <None Include="Regression\CancelInvitation.feature">
+    <None Include="HMRCScenarios\Scenario_1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CancelInvitation.feature.cs</LastGenOutput>
+      <LastGenOutput>Scenario_1.feature.cs</LastGenOutput>
     </None>
+    <None Include="packages.config" />
     <None Include="Regression\CreateDASAccount.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateDASAccount.feature.cs</LastGenOutput>

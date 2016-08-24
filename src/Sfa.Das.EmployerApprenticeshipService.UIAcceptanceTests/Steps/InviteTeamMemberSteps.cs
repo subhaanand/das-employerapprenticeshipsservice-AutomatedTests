@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.NavigationSteps;
+using System;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
@@ -6,10 +7,17 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
     [Binding]
     public class InviteTeamMemberSteps
     {
+        CoreSteps _navigationsteps = new CoreSteps();
+
+        [AfterScenario]
+        public void ClearDown()
+        {
+            _navigationsteps.Quit();
+        }
         [Given(@"I have an account")]
         public void GivenIHaveAnAccount()
         {
-            ScenarioContext.Current.Pending();
+            _navigationsteps.CheckAccountNameAdded();
         }
         
         [When(@"I invite""(.*)"" to my team")]
@@ -24,10 +32,6 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
             ScenarioContext.Current.Pending();
         }
         
-        [Then(@"they are added to my team list")]
-        public void ThenTheyAreAddedToMyTeamList()
-        {
-            ScenarioContext.Current.Pending();
-        }
+
     }
 }

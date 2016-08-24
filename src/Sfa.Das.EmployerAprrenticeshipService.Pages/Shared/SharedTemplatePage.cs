@@ -13,7 +13,7 @@
             
         }
 
-        private IWebElement LogoutLink
+        public IWebElement LogoutLink
         {
             get
             {

@@ -61,10 +61,11 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             LoginHmrcCredentials();
             GrantAuthority();//empref restriction means this can only run once
             /*DenyAuthority();*/
-           ApproveAccountCreation();
+            ApproveAccountCreation();
             //DenyAccountCreation();
-           //CheckAccountNameAdded(); need to work out the correct wayu to locate the account name in list
-
+            Logout();
+            CheckAccountNameAdded();
+            
         }
         public void ClickCreateAccountButton()
         {
@@ -147,9 +148,21 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
 
         public void CheckAccountNameAdded()
         {
+            LoginPirean();
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
             string accountadded = servicelandingpage.AccountAdded.Text;
-            StringAssert.Contains(CompanyNameExpected, accountadded);
+            accountadded.Contains(CompanyNameExpected);            
+        }
+
+        public void Quit()
+        {
+            Driver.Quit();
+        }
+
+        public void Logout()
+        {
+            ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
+            servicelandingpage.LogoutLink.Click();
         }
     }
 }

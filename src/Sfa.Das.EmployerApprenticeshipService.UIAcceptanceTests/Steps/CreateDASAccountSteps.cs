@@ -15,6 +15,11 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps
     public class CreateDASAccountSteps
     {
         CoreSteps _navigationsteps = new CoreSteps();
+        [AfterScenario]
+        public void ClearDown()
+        {
+            _navigationsteps.Quit();
+        }
         
         [Given(@"I Create a DAS Account")]
         [When(@"I Create a DAS Account")]
@@ -26,10 +31,10 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps
 
         }
 
-        [Then(@"An account should be ""(.*)""")]
-        public void ThenAnAccountShouldBe(string p0)
+        [Then(@"An account should be added")]
+        public void ThenAnAccountShouldBe()
         {
-            ScenarioContext.Current.Pending();
+            _navigationsteps.CheckAccountNameAdded();
         }
 
 

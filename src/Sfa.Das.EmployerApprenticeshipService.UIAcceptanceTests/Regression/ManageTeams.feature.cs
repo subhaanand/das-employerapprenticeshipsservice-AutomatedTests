@@ -71,10 +71,12 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Invite Team member")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageTeams")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TeamManagement")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
         public virtual void InviteTeamMember()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invite Team member", new string[] {
+                        "TeamManagement",
                         "Regression"});
 #line 6
 this.ScenarioSetup(scenarioInfo);
@@ -85,7 +87,33 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.And("give them \"role\" as a role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.Then("they are added to my team list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("they are added to my team list as \"status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Cancel Invitation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageTeams")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TeamManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
+        public virtual void CancelInvitation()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Invitation", new string[] {
+                        "TeamManagement",
+                        "Regression"});
+#line 13
+this.ScenarioSetup(scenarioInfo);
+#line 14
+ testRunner.Given("I have an account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 15
+ testRunner.When("I invite\"{p0}\" to my team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 16
+ testRunner.And("give them \"role\" as a role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.When("I cancel their invitation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+ testRunner.Then("they are removed from my team list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -93,18 +121,20 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("View Team")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageTeams")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TeamManagement")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
         public virtual void ViewTeam()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View Team", new string[] {
+                        "TeamManagement",
                         "Regression"});
-#line 13
+#line 21
 this.ScenarioSetup(scenarioInfo);
-#line 14
+#line 22
  testRunner.Given("I have an account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 15
+#line 23
  testRunner.And("I have poeple on my team list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
+#line 24
  testRunner.Then("I can view their role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -113,20 +143,22 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete Member")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageTeams")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TeamManagement")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
         public virtual void DeleteMember()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Member", new string[] {
+                        "TeamManagement",
                         "Regression"});
-#line 19
+#line 27
 this.ScenarioSetup(scenarioInfo);
-#line 20
+#line 28
  testRunner.Given("I have an account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 21
+#line 29
  testRunner.And("I have poeple on my team list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
+#line 30
  testRunner.Then("I can delete a member", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 23
+#line 31
  testRunner.And("I cannot delete myself", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

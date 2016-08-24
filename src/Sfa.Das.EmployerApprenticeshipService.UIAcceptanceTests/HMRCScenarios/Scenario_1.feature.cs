@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
+namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.HMRCScenarios
 {
     using TechTalk.SpecFlow;
     
@@ -19,19 +19,20 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.DeploymentItemAttribute("SpecBind.Selenium.dll")]
-    public partial class CreateDASAccountFeature
+    public partial class Scenario_1Feature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "CreateDASAccount.feature"
+#line 1 "Scenario_1.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CreateDASAccount", "\tIn order to access my Levy account\r\n\tI need to be able to create a DAS account", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Scenario_1", "\tIn order to maike sure levy declarations are calculated correctly in transaction" +
+                    "al views\r\n\tAML needs to display ", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -46,9 +47,9 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "CreateDASAccount")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "Scenario_1")))
             {
-                Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression.CreateDASAccountFeature.FeatureSetup(null);
+                Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.HMRCScenarios.Scenario_1Feature.FeatureSetup(null);
             }
         }
         
@@ -69,19 +70,23 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create DAS Account")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CreateDASAccount")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EmployerAccounts")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
-        public virtual void CreateDASAccount()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add two numbers")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Scenario_1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        public virtual void AddTwoNumbers()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create DAS Account", new string[] {
-                        "EmployerAccounts",
-                        "Regression"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", new string[] {
+                        "mytag"});
 #line 6
 this.ScenarioSetup(scenarioInfo);
+#line 7
+ testRunner.Given("I have entered 50 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.Then("An account should be added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I have entered 70 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 9
+ testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.Then("the result should be 120 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
