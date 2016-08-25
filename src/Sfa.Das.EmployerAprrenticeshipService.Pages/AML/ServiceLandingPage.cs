@@ -48,6 +48,15 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages
             }
         }
 
+        public IWebElement OpenAccountLink
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var OpenAccountLink = wait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Open")));
+                return OpenAccountLink;
+            }
+        }
         
 
     }

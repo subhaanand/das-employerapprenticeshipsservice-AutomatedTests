@@ -5,40 +5,39 @@ using TechTalk.SpecFlow;
 namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
 {
     [Binding]
-    public class ManageTeamsSteps
+    public class PAYESchemesSteps
     {
         CoreSteps _navigationsteps = new CoreSteps();
 
-        
-        [Then(@"I can delete a member")]
-        public void ThenICanDeleteAMember()
+       
+        [When(@"I add a PAYE scheme")]
+        public void WhenIAddAPAYEScheme()
         {
             ScenarioContext.Current.Pending();
         }
         
-        [Then(@"I cannot delete myself")]
-        public void ThenICannotDeleteMyself()
+        [When(@"I remove a PAYE scheme")]
+        public void WhenIRemoveAPAYEScheme()
         {
             ScenarioContext.Current.Pending();
         }
-
-        [Then(@"they are added to my team list as ""(.*)""")]
-        public void ThenTheyAreAddedToMyTeamListAs(string p0)
+        
+        [Then(@"PAYE scheme is added")]
+        public void ThenPAYESchemeIsAdded()
         {
             ScenarioContext.Current.Pending();
         }
-
-        [When(@"I cancel their invitation")]
-        public void WhenICancelTheirInvitation()
+        
+        [Then(@"I can view a PAYE scheme")]
+        public void ThenICanViewAPAYEScheme()
         {
             ScenarioContext.Current.Pending();
         }
-
-        [Then(@"they are removed from my team list")]
-        public void ThenTheyAreRemovedFromMyTeamList()
+        
+        [Then(@"PAYE scheme is removed")]
+        public void ThenPAYESchemeIsRemoved()
         {
             ScenarioContext.Current.Pending();
         }
-
     }
 }

@@ -83,10 +83,12 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("I have an account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.When("I invite\"email\" to my team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I view account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.And("give them \"role\" as a role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I invite\"email\" to my team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
+ testRunner.And("give them \"role\" as a role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
  testRunner.Then("they are added to my team list as \"status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -102,17 +104,17 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Invitation", new string[] {
                         "TeamManagement",
                         "Regression"});
-#line 13
-this.ScenarioSetup(scenarioInfo);
 #line 14
- testRunner.Given("I have an account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 15
- testRunner.When("I invite\"{p0}\" to my team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have an account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 16
- testRunner.And("give them \"role\" as a role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I invite\"{p0}\" to my team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
- testRunner.When("I cancel their invitation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("give them \"role\" as a role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
+ testRunner.When("I cancel their invitation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
  testRunner.Then("they are removed from my team list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -128,13 +130,13 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View Team", new string[] {
                         "TeamManagement",
                         "Regression"});
-#line 21
-this.ScenarioSetup(scenarioInfo);
 #line 22
- testRunner.Given("I have an account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 23
- testRunner.And("I have poeple on my team list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have an account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 24
+ testRunner.And("I have people on my team list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
  testRunner.Then("I can view their role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -150,15 +152,15 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Member", new string[] {
                         "TeamManagement",
                         "Regression"});
-#line 27
-this.ScenarioSetup(scenarioInfo);
 #line 28
- testRunner.Given("I have an account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 29
- testRunner.And("I have poeple on my team list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have an account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 30
- testRunner.Then("I can delete a member", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I have people on my team list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
+ testRunner.Then("I can delete a member", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 32
  testRunner.And("I cannot delete myself", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

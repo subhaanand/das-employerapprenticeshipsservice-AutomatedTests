@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.HMRCScenarios
+namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression
 {
     using TechTalk.SpecFlow;
     
@@ -19,20 +19,19 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.HMRCScenarios
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.DeploymentItemAttribute("SpecBind.Selenium.dll")]
-    public partial class Scenario_1Feature
+    public partial class TransactionsFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Scenario_1.feature"
+#line 1 "Transactions.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Scenario_1", "\tIn order to maike sure levy declarations are calculated correctly in transaction" +
-                    "al views\r\n\tAML needs to display ", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Transactions", "\tIn order to track my Levy spending\r\n\tI need an accurate view of my transactions", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,9 +46,9 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.HMRCScenarios
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Scenario_1")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "Transactions")))
             {
-                Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.HMRCScenarios.Scenario_1Feature.FeatureSetup(null);
+                Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Regression.TransactionsFeature.FeatureSetup(null);
             }
         }
         
@@ -70,23 +69,23 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.HMRCScenarios
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add two numbers")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Scenario_1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        public virtual void AddTwoNumbers()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("View a Transaction")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Transactions")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TransactionsView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
+        public virtual void ViewATransaction()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", new string[] {
-                        "mytag"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View a Transaction", new string[] {
+                        "TransactionsView",
+                        "Regression"});
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.Given("I have entered 50 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have an account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.And("I have entered 70 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I view a monthly transaction", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
- testRunner.Then("the result should be 120 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("a detailed view is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -10,9 +10,9 @@ using System.Configuration;
 
 namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.NavigationSteps
 {
-    public  class CoreSteps
+    public class CoreSteps
     {
-        private IWebDriver Driver = new InternetExplorerDriver();      
+        private IWebDriver Driver = new InternetExplorerDriver();
         public string username = ConfigurationManager.AppSettings["PireanUsername"];
         public string password = ConfigurationManager.AppSettings["PireanPassword"];
         public string CompanyNumber = ConfigurationManager.AppSettings["CompanyNumber"];
@@ -46,7 +46,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         //{
         //    string actualTtile = Driver.Title;
         //    StringAssert.Equals(actualTtile, expectedTitle);
-            
+
         //}
 
         public void CreateADasAccount()
@@ -64,12 +64,12 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             ApproveAccountCreation();
             //DenyAccountCreation();
             Logout();
-            CheckAccountNameAdded();
-            
+            //CheckAccountNameAdded();
+
         }
         public void ClickCreateAccountButton()
         {
-            ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);          
+            ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
             servicelandingpage.CreateAccountButton.Click();
         }
 
@@ -151,7 +151,16 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             LoginPirean();
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
             string accountadded = servicelandingpage.AccountAdded.Text;
-            accountadded.Contains(CompanyNameExpected);            
+            accountadded.Contains(CompanyNameExpected);
+        }
+
+        public void ViewAccount()
+        {
+            LoginPirean();
+            ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
+            servicelandingpage.OpenAccountLink.Click();
+            checkAccounthomepage();
+
         }
 
         public void Quit()
@@ -164,5 +173,16 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
             servicelandingpage.LogoutLink.Click();
         }
+        public void checkAccounthomepage()
+        {
+            AccountHomePage accounthomepage = new AccountHomePage(Driver);
+            accounthomepage.AgreementsLink.Displayed.Equals(true);
+            accounthomepage.FundingLink.Displayed.Equals(true);
+            accounthomepage.PAYELink.Displayed.Equals(true);
+            accounthomepage.TeamLink.Displayed.Equals(true);
+        }       
+    
+
+
     }
 }

@@ -5,6 +5,7 @@
 @TeamManagement @Regression
 Scenario: Invite Team member
 	Given I have an account
+	When I view account
 	When  I invite"email" to my team
 	And   give them "role" as a role
 	Then  they are added to my team list as "status"
@@ -20,12 +21,12 @@ Scenario:Cancel Invitation
 @TeamManagement @Regression
 Scenario: View Team
 	Given I have an account
-	And   I have poeple on my team list
+	And   I have people on my team list
 	Then  I can view their role
 
 @TeamManagement @Regression
 Scenario: Delete Member
 	Given I have an account
-	And   I have poeple on my team list
+	And   I have people on my team list
 	Then  I can delete a member
 	And   I cannot delete myself

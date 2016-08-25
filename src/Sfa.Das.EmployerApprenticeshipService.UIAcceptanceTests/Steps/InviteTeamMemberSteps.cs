@@ -8,12 +8,7 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
     public class InviteTeamMemberSteps
     {
         CoreSteps _navigationsteps = new CoreSteps();
-
-        [AfterScenario]
-        public void ClearDown()
-        {
-            _navigationsteps.Quit();
-        }
+        
         [Given(@"I have an account")]
         public void GivenIHaveAnAccount()
         {

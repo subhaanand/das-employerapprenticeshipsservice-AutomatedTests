@@ -109,32 +109,22 @@
     <Compile Include="..\Sfa.Das.EmployerAprrenticeshipService.Infrastructure\Steps\PireanComponentsSteps.cs">
       <Link>Steps\CoreSettings\PireanComponentsSteps.cs</Link>
     </Compile>
-    <Compile Include="HMRCScenarios\Scenario_1.feature.cs">
+    <Compile Include="Regression\PAYESchemes.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Scenario_1.feature</DependentUpon>
+      <DependentUpon>PAYESchemes.feature</DependentUpon>
     </Compile>
-    <Compile Include="HMRCScenarios\Scenario_2.feature.cs">
+    <Compile Include="Regression\Transactions.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Scenario_2.feature</DependentUpon>
-    </Compile>
-    <Compile Include="HMRCScenarios\Scenario_3.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Scenario_3.feature</DependentUpon>
-    </Compile>
-    <Compile Include="HMRCScenarios\Scenario_9.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Scenario_9.feature</DependentUpon>
+      <DependentUpon>Transactions.feature</DependentUpon>
     </Compile>
     <Compile Include="Steps\CreateDASAccountSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Regression\CreateDASAccount.feature.cs">
+    <Compile Include="Regression\EmployerAccount.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CreateDASAccount.feature</DependentUpon>
+      <DependentUpon>EmployerAccount.feature</DependentUpon>
     </Compile>
     <Compile Include="Regression\ManageTeams.feature.cs">
       <AutoGen>True</AutoGen>
@@ -149,38 +139,32 @@
     <Compile Include="Steps\CoreSettings\NavigationSteps.cs" />
     <Compile Include="Steps\InviteTeamMemberSteps.cs" />
     <Compile Include="Steps\ManageTeamsSteps.cs" />
+    <Compile Include="Steps\PAYESchemesSteps.cs" />
+    <Compile Include="Steps\TransactionsSteps.cs" />
     <Compile Include="Steps\ViewTeamMembersSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="HMRCScenarios\Scenario_1.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Scenario_1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="HMRCScenarios\Scenario_2.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Scenario_2.feature.cs</LastGenOutput>
-    </None>
-    <None Include="HMRCScenarios\Scenario_3.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Scenario_3.feature.cs</LastGenOutput>
-    </None>
-    <None Include="HMRCScenarios\Scenario_9.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Scenario_9.feature.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
-    <None Include="Regression\CreateDASAccount.feature">
+    <None Include="Regression\EmployerAccount.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CreateDASAccount.feature.cs</LastGenOutput>
+      <LastGenOutput>EmployerAccount.feature.cs</LastGenOutput>
     </None>
     <None Include="Regression\ManageTeams.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ManageTeams.feature.cs</LastGenOutput>
     </None>
+    <None Include="Regression\PAYESchemes.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PAYESchemes.feature.cs</LastGenOutput>
+    </None>
     <None Include="Regression\PireanComponents.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PireanComponents.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Regression\Transactions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Transactions.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
