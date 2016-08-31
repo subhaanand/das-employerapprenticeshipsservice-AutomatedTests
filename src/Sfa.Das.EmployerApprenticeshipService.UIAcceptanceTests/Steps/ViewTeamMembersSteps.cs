@@ -9,11 +9,12 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests
     {
         CoreSteps _navigationsteps = new CoreSteps();
 
-       
+
+        [Then(@"I have people on my team list")]
         [Given(@"I have people on my team list")]
         public void GivenIHavePoepleOnMyTeamList()
         {
-            ScenarioContext.Current.Pending();
+            _navigationsteps.viewTeamList();
         }
         
         [Then(@"I can view their role")]

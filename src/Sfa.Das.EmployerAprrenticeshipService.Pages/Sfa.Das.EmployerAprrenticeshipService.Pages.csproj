@@ -108,11 +108,13 @@
   <ItemGroup>
     <Compile Include="AML\AccountCreationApprovalPage.cs" />
     <Compile Include="AML\AccountHomePage.cs" />
+    <Compile Include="AML\CreateInvitationPage.cs" />
     <Compile Include="AML\GatewayConfirmPage.cs" />
     <Compile Include="AML\HMRCPage.cs" />
     <Compile Include="AML\HMRCResponsePage.cs" />
     <Compile Include="AML\InformPage.cs" />
     <Compile Include="AML\SearchForCompany.cs" />
+    <Compile Include="AML\TeamViewPage.cs" />
     <Compile Include="AML\TransactionsPage.cs" />
     <Compile Include="AML\VerifyCompanyPage.cs" />
     <Compile Include="Pirean\LoginPage.cs" />

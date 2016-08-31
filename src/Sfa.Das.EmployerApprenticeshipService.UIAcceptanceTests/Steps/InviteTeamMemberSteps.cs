@@ -14,13 +14,18 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
         {
             _navigationsteps.CheckAccountNameAdded();
         }
+
         
-        [When(@"I invite""(.*)"" to my team")]
-        public void WhenIInviteToMyTeam(string p0)
+
+        [Given(@"I invite ""(.*)"" with email ""(.*)"" to my team")]
+        [When(@"I invite ""(.*)"" with email ""(.*)"" to my team")]
+        [Then(@"I invite ""(.*)"" with email ""(.*)"" to my team")]
+        public void GivenIInviteWithEmailToMyTeam(string username, string email)
         {
-            ScenarioContext.Current.Pending();
+            _navigationsteps.InviteUsers(username, email);
         }
-        
+
+
         [When(@"give them ""(.*)"" as a role")]
         public void WhenGiveThemAsARole(string p0)
         {

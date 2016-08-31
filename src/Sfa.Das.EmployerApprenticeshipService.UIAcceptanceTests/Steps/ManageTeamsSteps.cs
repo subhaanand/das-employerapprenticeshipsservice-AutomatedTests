@@ -23,9 +23,9 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
         }
 
         [Then(@"they are added to my team list as ""(.*)""")]
-        public void ThenTheyAreAddedToMyTeamListAs(string p0)
+        public void ThenTheyAreAddedToMyTeamListAs(string email)
         {
-            ScenarioContext.Current.Pending();
+            _navigationsteps.viewTeamListForinvited(email);
         }
 
         [When(@"I cancel their invitation")]
