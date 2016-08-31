@@ -180,8 +180,21 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             accounthomepage.FundingLink.Displayed.Equals(true);
             accounthomepage.PAYELink.Displayed.Equals(true);
             accounthomepage.TeamLink.Displayed.Equals(true);
+        }
+        
+        public void viewTransactionsPage()
+        {
+            ViewAccount();
+            AccountHomePage accounthomepage = new AccountHomePage(Driver);
+            accounthomepage.FundingLink.Click();
+            TransactionsPage transactionspage = new TransactionsPage(Driver);
+            transactionspage.TransactionsTable.Displayed.Equals(true);
         }       
-    
+        public void viewTransactionsTable()
+        {
+            TransactionsPage transactionspage = new TransactionsPage(Driver);
+            transactionspage.TransactionsTable.Displayed.Equals(true);
+        }
 
 
     }

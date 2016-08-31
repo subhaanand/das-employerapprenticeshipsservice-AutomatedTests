@@ -4,6 +4,5 @@
 
 @TransactionsView @Regression
 Scenario: View a Transaction
-	Given I have an account
-	When I view a monthly transaction
-	Then a detailed view is displayed
+	Given I view transactions
+	Then Transactions page is displayed

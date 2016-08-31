@@ -113,6 +113,7 @@
     <Compile Include="AML\HMRCResponsePage.cs" />
     <Compile Include="AML\InformPage.cs" />
     <Compile Include="AML\SearchForCompany.cs" />
+    <Compile Include="AML\TransactionsPage.cs" />
     <Compile Include="AML\VerifyCompanyPage.cs" />
     <Compile Include="Pirean\LoginPage.cs" />
     <Compile Include="Pirean\PireanRegisterPage.cs" />

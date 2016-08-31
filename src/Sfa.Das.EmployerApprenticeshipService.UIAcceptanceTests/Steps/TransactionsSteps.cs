@@ -8,18 +8,21 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
     public class TransactionsSteps
     {
         CoreSteps _navigationsteps = new CoreSteps();
-       
 
-        [When(@"I view a monthly transaction")]
+
+        [Given(@"I view transactions")]
+        [When(@"I view transactions")]
+        [Then(@"I view transactions")]
         public void WhenIViewAMonthlyTransaction()
         {
-            ScenarioContext.Current.Pending();
+            _navigationsteps.viewTransactionsPage();
         }
-        
-        [Then(@"a detailed view is displayed")]
-        public void ThenADetailedViewIsDisplayed()
+
+        [Then(@"Transactions page is displayed")]
+        public void ThenTransactionsPageIsDisplayed()
         {
-            ScenarioContext.Current.Pending();
+            _navigationsteps.viewTransactionsTable();
         }
+
     }
 }
