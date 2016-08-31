@@ -19,7 +19,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
             get
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-                var TeamList = wait.Until(ExpectedConditions.ElementToBeClickable(By.ClassName("responsive-tr")));
+                var TeamList = wait.Until(ExpectedConditions.ElementToBeClickable(By.ClassName("responsive-table")));
                 return TeamList;
             }
         }

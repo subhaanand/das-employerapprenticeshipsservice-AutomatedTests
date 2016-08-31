@@ -229,15 +229,10 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             TeamViewPage teamviewpage = new TeamViewPage(Driver);
             teamviewpage.TeamList.Displayed.Equals(true);
             teamviewpage.AddUserButton.Click();
-            CreateInvitationPage createinvitationpage = new CreateInvitationPage(Driver);
-            createinvitationpage.CreateButton.Displayed.Equals(true);
-            createinvitationpage.EmailTextBox.Displayed.Equals(true);
-            createinvitationpage.NameTextBox.Displayed.Equals(true);
-            createinvitationpage.OwnerRadioButton.Displayed.Equals(true);
-            createinvitationpage.TransactorRadioButton.Displayed.Equals(true);
-            createinvitationpage.ViewerRadioButton.Displayed.Equals(true);
+            CreateInvitationPage createinvitationpage = new CreateInvitationPage(Driver);            
             createinvitationpage.NameTextBox.Clear();
             createinvitationpage.NameTextBox.SendKeys(username);
+            createinvitationpage.EmailTextBox.Clear();
             createinvitationpage.EmailTextBox.SendKeys(email);
             createinvitationpage.ViewerRadioButton.Click();
             createinvitationpage.CreateButton.Click();
