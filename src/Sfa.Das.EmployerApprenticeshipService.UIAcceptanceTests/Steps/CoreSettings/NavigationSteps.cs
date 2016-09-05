@@ -34,7 +34,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             LoginPage.UsernameBox.SendKeys(username);
             LoginPage.PasswordBox.Clear();
             LoginPage.PasswordBox.SendKeys(password);
-            LoginPage.LoginButton.Click();
+            LoginPage.LoginButton.Click();            
         }
 
         public void CloseBrowser()
@@ -42,12 +42,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             Driver.Quit();
         }
 
-        //public void checkPageTitle(string expectedTitle)
-        //{
-        //    string actualTtile = Driver.Title;
-        //    StringAssert.Equals(actualTtile, expectedTitle);
-
-        //}
+        
 
         public void CreateADasAccount()
         {
