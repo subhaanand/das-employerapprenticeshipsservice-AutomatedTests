@@ -11,11 +11,10 @@ Examples:
 | James Doe | sfa.aml.test+jamesdoe@gmail.com|
 
 @TeamManagement @Regression
-Scenario:Cancel Invitation
-	Given I have an account
-	When I invite "username" with email "email@amlemail.com" to my team
+Scenario:Cancel Invitation	
+	Given I view second member on the list
 	When I cancel their invitation
-	Then they are removed from my team list
+	#Then they are removed from my team list
 
 @TeamManagement @Regression
 Scenario: View Team

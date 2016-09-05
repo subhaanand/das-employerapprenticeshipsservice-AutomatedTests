@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="AML\AccountCreationApprovalPage.cs" />
     <Compile Include="AML\AccountHomePage.cs" />
+    <Compile Include="AML\CancelInvitationPage.cs" />
     <Compile Include="AML\CreateInvitationPage.cs" />
     <Compile Include="AML\GatewayConfirmPage.cs" />
     <Compile Include="AML\HMRCPage.cs" />

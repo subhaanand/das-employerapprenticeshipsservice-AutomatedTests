@@ -257,6 +257,28 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
 
         }
 
+        public void ViewSecondMember()
+        {
+            ViewAccount();
+            AccountHomePage accounthomepage = new AccountHomePage(Driver);
+            accounthomepage.TeamLink.Click();
+            TeamViewPage teamviewpage = new TeamViewPage(Driver);
+            teamviewpage.TeamList.Displayed.Equals(true);
+            string teammembers = teamviewpage.TeamList.Text;
+            teammembers.Contains(username);
+            teamviewpage.ViewSecondMember.Click();
+            
+        }
+
+        public void CancelInvitation()
+        {
+            MemberDetailsPage memberdetailspage = new MemberDetailsPage(Driver);
+            memberdetailspage.CancelInvitationButton.Click();
+            CancelInvitationPage cancelinvitationpage = new CancelInvitationPage(Driver);
+            cancelinvitationpage.YesRadioOption.Click();
+            cancelinvitationpage.ContinueButton.Click();
+        }
+
         public void InviteUsers(string username, string email)
         {
             ViewAccount();

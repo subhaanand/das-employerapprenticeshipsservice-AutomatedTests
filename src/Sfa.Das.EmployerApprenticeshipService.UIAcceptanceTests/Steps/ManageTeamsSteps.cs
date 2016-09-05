@@ -31,7 +31,7 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
         [When(@"I cancel their invitation")]
         public void WhenICancelTheirInvitation()
         {
-            ScenarioContext.Current.Pending();
+            _navigationsteps.CancelInvitation();
         }
 
         [Then(@"they are removed from my team list")]
@@ -39,6 +39,12 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
         {
             ScenarioContext.Current.Pending();
         }
+        [Given(@"I view second member on the list")]
+        public void GivenIViewSecondMemberOnTheList()
+        {
+            _navigationsteps.ViewSecondMember();
+        }
+
 
     }
 }
