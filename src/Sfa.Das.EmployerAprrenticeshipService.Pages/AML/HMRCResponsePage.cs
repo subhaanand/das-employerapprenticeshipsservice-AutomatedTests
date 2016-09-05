@@ -20,7 +20,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
             get
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-                var AuthoriseButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("authorise")));
+                var AuthoriseButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.ClassName("button")));
                 return AuthoriseButton;
             }
         }
@@ -30,7 +30,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
             get
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-                var DenyButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("deny")));
+                var DenyButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Do not grant authority")));
                 return DenyButton;
             }
         }
