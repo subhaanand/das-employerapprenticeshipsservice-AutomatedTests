@@ -40,6 +40,15 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean
             }
         }
 
+        public IWebElement CreateAccountLink
+        {
+            get
+            {
+                var CreateAccountLink = Driver.FindElement(By.LinkText("create an account"));
+                return CreateAccountLink;
+            }
+        }
+
         }
 
 

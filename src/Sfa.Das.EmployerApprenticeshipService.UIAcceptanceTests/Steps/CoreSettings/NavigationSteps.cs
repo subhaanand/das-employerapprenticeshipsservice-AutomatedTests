@@ -67,6 +67,47 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             //CheckAccountNameAdded();
 
         }
+
+        public void CreatePireanAccountSetFirstName(string firstname)
+        {
+            PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
+            pireanregisterpage.FirstNameBox.SendKeys(firstname);
+        }
+
+        public void CreatePireanAccountSetLastName(string lastname)
+        {
+            PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
+            pireanregisterpage.LastNameBox.SendKeys(lastname);
+        }
+        public void CreatePireanAccountSetEmail(string email)
+        {
+            PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
+            pireanregisterpage.EmailBox.SendKeys(email);
+
+        }
+        public void CreatePireanAccountSetPassword(string password)
+        {
+            PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);            
+            pireanregisterpage.PasswordBox.SendKeys(password);
+            pireanregisterpage.PasswordConfirmBox.SendKeys(password);
+        }
+
+        public void AckonowledgeandCreatePireanAccount()
+        {
+            PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
+            pireanregisterpage.AgreeCheckBox.Click();
+            pireanregisterpage.CreateAnAccountButton.Click();
+            //TO DO
+        }
+
+        public void RegisterNewUser()
+        {
+            LoadStartPage();
+            ClickLoginButton();
+            PireanLoginPage pireanloginpage = new PireanLoginPage(Driver);
+            pireanloginpage.CreateAccountLink.Click();
+        }
+
         public void ClickCreateAccountButton()
         {
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
