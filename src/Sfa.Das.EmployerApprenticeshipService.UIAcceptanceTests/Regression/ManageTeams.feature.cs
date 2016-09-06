@@ -95,10 +95,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "James Doe")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "James Doe")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "sfa.aml.test+jamesdoe@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "sfa.aml.test+johndoe@gmail.com")]
         public virtual void InviteTeamMember_JamesDoe()
         {
-            this.InviteTeamMember("James Doe", "sfa.aml.test+jamesdoe@gmail.com", ((string[])(null)));
+            this.InviteTeamMember("James Doe", "sfa.aml.test+johndoe@gmail.com", ((string[])(null)));
 #line hidden
         }
         

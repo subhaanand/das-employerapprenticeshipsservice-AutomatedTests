@@ -8,7 +8,7 @@ Scenario Outline: Invite Team member
 	Then  they are added to my team list as "<email>"
 Examples: 
 | username | email|
-| James Doe | sfa.aml.test+jamesdoe@gmail.com|
+| James Doe | sfa.aml.test+johndoe@gmail.com|
 
 @TeamManagement @Regression
 Scenario:Cancel Invitation	

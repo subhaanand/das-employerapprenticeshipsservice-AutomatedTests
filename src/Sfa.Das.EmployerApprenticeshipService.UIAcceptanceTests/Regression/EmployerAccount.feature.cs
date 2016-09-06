@@ -96,9 +96,9 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View Account", new string[] {
                         "EmployerAccounts",
                         "Regression"});
-#line 9
-this.ScenarioSetup(scenarioInfo);
 #line 10
+this.ScenarioSetup(scenarioInfo);
+#line 11
 testRunner.Given("I view account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             this.ScenarioCleanup();

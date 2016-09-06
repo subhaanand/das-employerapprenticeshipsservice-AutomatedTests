@@ -5,6 +5,7 @@ using OpenQA.Selenium.IE;
 using Sfa.Das.EmployerAprrenticeshipService.Pages;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.AML;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean;
+using SpecBind.BrowserSupport;
 using System;
 using System.Configuration;
 
@@ -12,7 +13,9 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
 {
     public class CoreSteps
     {
-        private IWebDriver Driver = new InternetExplorerDriver();
+        
+        private IWebDriver Driver = new InternetExplorerDriver();  
+              
         public string username = ConfigurationManager.AppSettings["PireanUsername"];
         public string password = ConfigurationManager.AppSettings["PireanPassword"];
         public string CompanyNumber = ConfigurationManager.AppSettings["CompanyNumber"];
@@ -24,7 +27,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         {
             Driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["baseUrl"]);
         }
-
         public void LoginPirean()
         {
             LoadStartPage();
@@ -36,14 +38,10 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             LoginPage.PasswordBox.SendKeys(password);
             LoginPage.LoginButton.Click();            
         }
-
         public void CloseBrowser()
         {
             Driver.Quit();
-        }
-
-        
-
+        }        
         public void CreateADasAccount()
         {
             LoginPirean();
@@ -62,13 +60,11 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             //CheckAccountNameAdded();
 
         }
-
         public void CreatePireanAccountSetFirstName(string firstname)
         {
             PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
             pireanregisterpage.FirstNameBox.SendKeys(firstname);
         }
-
         public void CreatePireanAccountSetLastName(string lastname)
         {
             PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
@@ -86,7 +82,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             pireanregisterpage.PasswordBox.SendKeys(password);
             pireanregisterpage.PasswordConfirmBox.SendKeys(password);
         }
-
         public void AckonowledgeandCreatePireanAccount()
         {
             PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
@@ -94,7 +89,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             pireanregisterpage.CreateAnAccountButton.Click();
             //TO DO
         }
-
         public void RegisterNewUser()
         {
             LoadStartPage();
@@ -102,32 +96,27 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             PireanLoginPage pireanloginpage = new PireanLoginPage(Driver);
             pireanloginpage.CreateAccountLink.Click();
         }
-
         public void ClickCreateAccountButton()
         {
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
             servicelandingpage.CreateAccountButton.Click();
         }
-
         public void ClickLoginButton()
         {
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
             servicelandingpage.StartButton.Click();
         }
-
         public void ClickStartButton()
         {
             InformPage informpage = new InformPage(Driver);
             informpage.StartButton.Click();
         }
-
         public void ConfirmGatewayCredentials()
         {
             GatewayConfirmPage gatewayconfirmPage = new GatewayConfirmPage(Driver);
             gatewayconfirmPage.YesOption.Click();
             gatewayconfirmPage.ContinueButton.Click();
         }
-
         public void SearchForCompany()
         {
             SearchForCompany searchforcompany = new SearchForCompany(Driver);
@@ -135,7 +124,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             searchforcompany.CompanyHouseTextBox.SendKeys(CompanyNumber);
             searchforcompany.ContinueButton.Click();
         }
-
         public void VerifyCompany()
         {
             VerifyCompanyPage verifycompanypage = new VerifyCompanyPage(Driver);
@@ -143,7 +131,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             StringAssert.Contains(CompanyNameExpected, companynamereturned);
             verifycompanypage.ContinueButton.Click();
         }
-
         public void LoginHmrcCredentials()
         {
             HMRCLoginPage hmrcpage = new HMRCLoginPage(Driver);
@@ -153,7 +140,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             hmrcpage.PasswordTextBox.SendKeys(HMRCPassword);
             hmrcpage.SignInButton.Click();
         }
-
         public void GrantAuthority()
         {
             HMRCResponsePage hmrcresponsepage = new HMRCResponsePage(Driver);
@@ -164,7 +150,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             HMRCResponsePage hmrcresponsepage = new HMRCResponsePage(Driver);
             hmrcresponsepage.DenyButton.Click();
         }
-
         public void ApproveAccountCreation()
         {
             AccountCreationApprovalPage accountcreationapprovalpage = new AccountCreationApprovalPage(Driver);
@@ -181,7 +166,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             accountcreationapprovalpage.NoOption.Click();
             accountcreationapprovalpage.ContinueButton.Click();
         }
-
         public void CheckAccountNameAdded()
         {
             LoginPirean();
@@ -189,7 +173,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             string accountadded = servicelandingpage.AccountAdded.Text;
             accountadded.Contains(CompanyNameExpected);
         }
-
         public void ViewAccount()
         {
             LoginPirean();
@@ -198,12 +181,10 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             checkAccounthomepage();
 
         }
-
         public void Quit()
         {
             Driver.Quit();
         }
-
         public void Logout()
         {
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
@@ -216,8 +197,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             accounthomepage.FundingLink.Displayed.Equals(true);
             accounthomepage.PAYELink.Displayed.Equals(true);
             accounthomepage.TeamLink.Displayed.Equals(true);
-        }
-        
+        }        
         public void viewTransactionsPage()
         {
             ViewAccount();
@@ -225,8 +205,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             accounthomepage.FundingLink.Click();
             TransactionsPage transactionspage = new TransactionsPage(Driver);
             transactionspage.TransactionsTable.Displayed.Equals(true);
-        }
-        
+        }        
         public void ViewExistingPayeSchemes()
         {
             ViewAccount();
@@ -235,8 +214,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             PayeSchemesPage payeschemespage = new PayeSchemesPage(Driver);            
             string existingpayeeschemes = payeschemespage.ListOfPaye.Text;
             existingpayeeschemes.Contains("111/AA00001 OPTISOURCE TECHNOLOGY SOLUTIONS LIMITED");
-        }
-        
+        }        
         public void AddPayeScheme(string companyNumber)
         {
             ViewAccount();
@@ -252,7 +230,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             transactionspage.AnyViewLink.Click();
             
         }
-
         public void viewTeamList()
         {
             ViewAccount();
@@ -264,7 +241,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             teammembers.Contains(username);
 
         }
-
         public void viewTeamListForinvited(string username)
         {
             ViewAccount();
@@ -276,7 +252,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             teammembers.Contains(username);
 
         }
-
         public void ViewSecondMember()
         {
             ViewAccount();
@@ -289,7 +264,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             teamviewpage.ViewSecondMember.Click();
             
         }
-
         public void CancelInvitation()
         {
             MemberDetailsPage memberdetailspage = new MemberDetailsPage(Driver);
@@ -298,7 +272,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             cancelinvitationpage.YesRadioOption.Click();
             cancelinvitationpage.ContinueButton.Click();
         }
-
         public void InviteUsers(string username, string email)
         {
             ViewAccount();
