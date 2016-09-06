@@ -9,29 +9,33 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
     {
         CoreSteps _navigationsteps = new CoreSteps();
 
-       
-        [When(@"I add a PAYE scheme")]
-        public void WhenIAddAPAYEScheme()
+
+        [Given(@"I add a PAYE scheme for ""(.*)""")]
+        [When(@"I add a PAYE scheme for ""(.*)""")]
+        public void WhenIAddAPAYESchemeFor(string companyNumber)
         {
-            ScenarioContext.Current.Pending();
+            _navigationsteps.AddPayeScheme(companyNumber);
         }
-        
+
+
         [When(@"I remove a PAYE scheme")]
         public void WhenIRemoveAPAYEScheme()
         {
             ScenarioContext.Current.Pending();
         }
-        
+
+
         [Then(@"PAYE scheme is added")]
         public void ThenPAYESchemeIsAdded()
         {
             ScenarioContext.Current.Pending();
         }
-        
+
+        [Given(@"I can view a PAYE scheme")]
         [Then(@"I can view a PAYE scheme")]
         public void ThenICanViewAPAYEScheme()
         {
-            ScenarioContext.Current.Pending();
+            _navigationsteps.ViewExistingPayeSchemes();
         }
         
         [Then(@"PAYE scheme is removed")]

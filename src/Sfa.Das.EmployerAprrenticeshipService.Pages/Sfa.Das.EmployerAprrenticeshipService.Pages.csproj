@@ -115,6 +115,7 @@
     <Compile Include="AML\HMRCResponsePage.cs" />
     <Compile Include="AML\InformPage.cs" />
     <Compile Include="AML\MemberDetailsPage.cs" />
+    <Compile Include="AML\PayeSchemesPage.cs" />
     <Compile Include="AML\SearchForCompany.cs" />
     <Compile Include="AML\TeamViewPage.cs" />
     <Compile Include="AML\TransactionsPage.cs" />

@@ -9,28 +9,29 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
 {
-    public class TransactionsPage : BasePage
+    public class PayeSchemesPage : BasePage
     {
-        public TransactionsPage(IWebDriver driver) : base(driver)
+        public PayeSchemesPage(IWebDriver driver) : base(driver)
         {
         }
 
-        public IWebElement TransactionsTable
+        public IWebElement AddPayeButton
         {
             get
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-                var TransactionsTable = wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("responsive-tr")));
-                return TransactionsTable;
+                var AddPayeButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("addNewPaye")));
+                return AddPayeButton;
             }
         }
-        public IWebElement AnyViewLink
+
+        public IWebElement ListOfPaye
         {
             get
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-                var AnyViewLink = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("#transactions > div.responsive-tbody > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > a")));
-                return AnyViewLink;
+                var ListOfPaye = wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("responsive-table")));
+                return ListOfPaye;
             }
         }
     }

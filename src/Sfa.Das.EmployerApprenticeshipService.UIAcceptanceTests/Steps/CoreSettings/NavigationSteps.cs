@@ -225,11 +225,31 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             accounthomepage.FundingLink.Click();
             TransactionsPage transactionspage = new TransactionsPage(Driver);
             transactionspage.TransactionsTable.Displayed.Equals(true);
+        }
+        
+        public void ViewExistingPayeSchemes()
+        {
+            ViewAccount();
+            AccountHomePage accounthomepage = new AccountHomePage(Driver);
+            accounthomepage.PAYELink.Click();
+            PayeSchemesPage payeschemespage = new PayeSchemesPage(Driver);            
+            string existingpayeeschemes = payeschemespage.ListOfPaye.Text;
+            existingpayeeschemes.Contains("111/AA00001 OPTISOURCE TECHNOLOGY SOLUTIONS LIMITED");
+        }
+        
+        public void AddPayeScheme(string companyNumber)
+        {
+            ViewAccount();
+            AccountHomePage accounthomepage = new AccountHomePage(Driver);
+            accounthomepage.PAYELink.Click();
+            PayeSchemesPage payeschemespage = new PayeSchemesPage(Driver);
+            payeschemespage.AddPayeButton.Click();
         }       
         public void viewTransactionsTable()
         {
             TransactionsPage transactionspage = new TransactionsPage(Driver);
             transactionspage.TransactionsTable.Displayed.Equals(true);
+            transactionspage.AnyViewLink.Click();
             
         }
 
