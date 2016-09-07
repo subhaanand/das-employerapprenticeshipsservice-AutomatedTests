@@ -1,11 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.PhantomJS;
 using Sfa.Das.EmployerAprrenticeshipService.Pages;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.AML;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.Pirean;
-using SpecBind.BrowserSupport;
 using System;
 using System.Configuration;
 
@@ -14,7 +15,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
     public class CoreSteps
     {
         
-        private IWebDriver Driver = new InternetExplorerDriver();  
+        private IWebDriver Driver = new ChromeDriver(ConfigurationManager.AppSettings["ChromeDriver"].ToString());  
               
         public string username = ConfigurationManager.AppSettings["PireanUsername"];
         public string password = ConfigurationManager.AppSettings["PireanPassword"];
