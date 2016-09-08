@@ -16,7 +16,11 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps
     {
         CoreSteps _navigationsteps = new CoreSteps();
         
-        
+        [AfterScenario]
+        public void closeBrowser()
+        {
+            _navigationsteps.Quit();
+        }
         [Given(@"I Create a DAS Account")]
         [When(@"I Create a DAS Account")]
         [Then(@"I Create a DAS Account")]

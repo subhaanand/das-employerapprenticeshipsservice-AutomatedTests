@@ -166,7 +166,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         }
         public void CheckAccountNameAdded()
         {
-            LoginPirean();
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
             string accountadded = servicelandingpage.AccountAdded.Text;
             accountadded.Contains(CompanyNameExpected);
@@ -175,8 +174,9 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         {
             LoginPirean();
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
+            CheckAccountNameAdded();
             servicelandingpage.OpenAccountLink.Click();
-            checkAccounthomepage();
+            
 
         }
         public void Quit()
