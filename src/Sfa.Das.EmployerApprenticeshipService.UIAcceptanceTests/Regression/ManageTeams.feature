@@ -18,8 +18,8 @@ Scenario:Cancel Invitation
 
 @TeamManagement @Regression
 Scenario: View Team
-	Given I have an account
-	Then I have people on my team list
+	Given I have people on my team list
+	Then I close Browser
 	
 
 @TeamManagement @Regression

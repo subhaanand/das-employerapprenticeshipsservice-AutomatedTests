@@ -150,19 +150,16 @@
     <None Include="packages.config" />
     <None Include="Regression\EmployerAccount.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>EmployerAccount.feature.cs</LastGenOutput>
     </None>
     <None Include="Regression\ManageTeams.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ManageTeams.feature.cs</LastGenOutput>
     </None>
     <None Include="Regression\PAYESchemes.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>PAYESchemes.feature.cs</LastGenOutput>
     </None>
     <None Include="Regression\PireanComponents.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>PireanComponents.feature.cs</LastGenOutput>
+      <LastGenOutput>PireanComponents1.feature.cs</LastGenOutput>
     </None>
     <None Include="Regression\Transactions.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

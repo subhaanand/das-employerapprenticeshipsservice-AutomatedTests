@@ -17,6 +17,6 @@ Scenario Outline: Register a Pirean Account
 	Then  I click CreateAccount
 Examples:
 | firstname | lastname | email | password |
-|           |          |       |          |
+|   test        |    test      |   sfa.aml.test+12th@gmail.com    |   Office01       |
 	
 	

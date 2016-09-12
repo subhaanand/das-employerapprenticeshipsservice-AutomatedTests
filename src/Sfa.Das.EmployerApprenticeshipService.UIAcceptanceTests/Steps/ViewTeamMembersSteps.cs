@@ -12,7 +12,7 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests
 
         [Then(@"I have people on my team list")]
         [Given(@"I have people on my team list")]
-        public void GivenIHavePoepleOnMyTeamList()
+        public void GivenIHavePeopleOnMyTeamList()
         {
             _navigationsteps.viewTeamList();
         }

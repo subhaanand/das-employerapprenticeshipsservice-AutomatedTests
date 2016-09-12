@@ -12,7 +12,7 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
         [Given(@"I have an account")]
         public void GivenIHaveAnAccount()
         {
-            _navigationsteps.CheckAccountNameAdded();
+            _navigationsteps.ViewAccount();
         }
 
         
