@@ -98,12 +98,12 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         public void ClickCreateAccountButton()
         {
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
-            servicelandingpage.CreateAccountButton.Click();
+            servicelandingpage.AddAccountButton.Click();
         }
         public void ClickLoginButton()
         {
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
-            servicelandingpage.StartButton.Click();
+            servicelandingpage.SigninButton.Click();
         }
         public void ClickStartButton()
         {

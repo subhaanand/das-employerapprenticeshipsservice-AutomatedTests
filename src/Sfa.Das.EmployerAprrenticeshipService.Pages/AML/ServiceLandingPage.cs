@@ -17,22 +17,22 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages
         } 
                   
 
-        public IWebElement CreateAccountButton
+        public IWebElement AddAccountButton
         {
             get
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-                var CreateAccountButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.ClassName("button")));
+                var CreateAccountButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("add_new_account")));
                 return CreateAccountButton;
             }
         }
 
-        public IWebElement StartButton
+        public IWebElement SigninButton
         {
             get
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-                var StartButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.ClassName("button-start")));
+                var StartButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("sign_in")));
                 return StartButton;
             }
         }

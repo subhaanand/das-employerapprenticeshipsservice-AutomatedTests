@@ -19,7 +19,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
             get
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-                var StartButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.ClassName("button")));
+                var StartButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("start")));
                 return StartButton;
             }
         }
