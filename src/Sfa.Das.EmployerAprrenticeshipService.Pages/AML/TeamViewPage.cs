@@ -33,13 +33,12 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
                 return AddUserButton;
             }
         }
-
         public IWebElement ViewSecondMember
         {
             get
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-                //not ideal to use css selector but no choice
+                //not ideal to use css selector but currently have no choice
                 var ViewSecondMember = wait.Until(ExpectedConditions.ElementToBeClickable
                     (By.CssSelector
                     ("#content > div:nth-child(2) > div > div > div.responsive-tbody > div:nth-child(2) > div:nth-child(5) > div:nth-child(1) > a"

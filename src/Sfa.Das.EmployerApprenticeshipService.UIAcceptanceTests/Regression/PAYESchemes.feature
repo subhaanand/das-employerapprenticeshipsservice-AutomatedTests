@@ -9,7 +9,7 @@ Scenario: Add PAYE scheme
 
 @PAYESchemes @Regression
 Scenario: View PAYE scheme	
-	Given I can view a PAYE scheme
+	Given I can view PAYE schemes
 @PAYESchemes @Regression
 Scenario: Remove PAYE Scheme
 	Given I have an account

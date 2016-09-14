@@ -153,9 +153,11 @@
     </None>
     <None Include="Regression\ManageTeams.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ManageTeams1.feature.cs</LastGenOutput>
     </None>
     <None Include="Regression\PAYESchemes.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PAYESchemes1.feature.cs</LastGenOutput>
     </None>
     <None Include="Regression\PireanComponents.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

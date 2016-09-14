@@ -31,8 +31,8 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
             ScenarioContext.Current.Pending();
         }
 
-        [Given(@"I can view a PAYE scheme")]
-        [Then(@"I can view a PAYE scheme")]
+        [Given(@"I can view PAYE schemes")]
+        [Then(@"I can view  PAYE schemes")]
         public void ThenICanViewAPAYEScheme()
         {
             _navigationsteps.ViewExistingPayeSchemes();

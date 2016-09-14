@@ -44,6 +44,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         {
             LoginPirean();
             ClickCreateAccountButton();
+            //ClickChecklist();
             ClickStartButton();
             ConfirmGatewayCredentials();
             SearchForCompany();
