@@ -150,6 +150,7 @@
     <None Include="packages.config" />
     <None Include="Regression\EmployerAccount.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EmployerAccount1.feature.cs</LastGenOutput>
     </None>
     <None Include="Regression\ManageTeams.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
