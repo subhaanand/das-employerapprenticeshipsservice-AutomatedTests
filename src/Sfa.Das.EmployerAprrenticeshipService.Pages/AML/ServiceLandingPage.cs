@@ -1,7 +1,6 @@
 ﻿using System;
 using OpenQA.Selenium;
 using System.Configuration;
-using SpecBind.Selenium;
 using OpenQA.Selenium.Chrome;
 using Sfa.Das.EmployerAprrenticeshipService.Pages.Shared;
 using OpenQA.Selenium.Support.UI;
@@ -57,7 +56,18 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages
                 return OpenAccountLink;
             }
         }
-        
+
+        public IWebElement ClickCheckStatement
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var ClickCheckStatement = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("understood")));
+                return ClickCheckStatement;
+            }
+        }
+
+
 
     }
 }

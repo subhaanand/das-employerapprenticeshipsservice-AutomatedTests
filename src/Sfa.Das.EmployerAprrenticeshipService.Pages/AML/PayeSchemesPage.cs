@@ -24,6 +24,25 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
                 return AddPayeButton;
             }
         }
+        public IWebElement AddPayeDraft
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var AddPayeDraft = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("confirmPayeVisibility")));
+                return AddPayeDraft;
+            }
+        }
+        public IWebElement ContinuePaye
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(0));
+                var ContinuePaye = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("continue")));
+                return ContinuePaye;
+            }
+        }
+
 
         public IWebElement ListOfPaye
         {
@@ -32,6 +51,43 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
                 var ListOfPaye = wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("responsive-table")));
                 return ListOfPaye;
+            }
+        }
+        public IWebElement RemoveScheme
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var RemoveScheme = wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText("Remove")));
+                return RemoveScheme;
+
+            }
+        }
+        public IWebElement ConfirmRemoval
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var ConfirmRemoval = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(" //span[text()='Yes, remove scheme']")));
+                return ConfirmRemoval;
+            }
+        }
+        public IWebElement ContinueRemoval
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var ContinueRemoval = wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("button")));
+                return ContinueRemoval;
+            }
+        }
+        public IWebElement PayeSchemeRemoved
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var PayeSchemeRemoved = wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("govuk-box-highlight")));
+                return PayeSchemeRemoved;
             }
         }
     }

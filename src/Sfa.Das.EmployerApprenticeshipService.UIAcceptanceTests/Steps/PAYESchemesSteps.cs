@@ -21,13 +21,14 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
         [When(@"I remove a PAYE scheme")]
         public void WhenIRemoveAPAYEScheme()
         {
-            ScenarioContext.Current.Pending();
+            _navigationsteps.RemovePayeScheme();
         }
 
 
         [Then(@"PAYE scheme is added")]
         public void ThenPAYESchemeIsAdded()
         {
+
             ScenarioContext.Current.Pending();
         }
 
@@ -41,7 +42,8 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
         [Then(@"PAYE scheme is removed")]
         public void ThenPAYESchemeIsRemoved()
         {
-            ScenarioContext.Current.Pending();
+            _navigationsteps.PayeSchemeRemoved();
+            //ScenarioContext.Current.Pending();
         }
     }
 }

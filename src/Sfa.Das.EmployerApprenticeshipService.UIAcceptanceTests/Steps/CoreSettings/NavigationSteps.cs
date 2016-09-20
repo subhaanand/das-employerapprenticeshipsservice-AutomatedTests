@@ -44,7 +44,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         {
             LoginPirean();
             ClickCreateAccountButton();
-            //ClickChecklist();
+            ClickCheckStatement();
             ClickStartButton();
             ConfirmGatewayCredentials();
             SearchForCompany();
@@ -55,31 +55,31 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             /*DenyAuthority();*/
             ApproveAccountCreation();
             //DenyAccountCreation();
-            Logout();
-            //CheckAccountNameAdded();
+            //Logout();
+            CheckAccountNameAdded();
 
         }
         public void CreatePireanAccountSetFirstName(string firstname)
         {
             PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
-            pireanregisterpage.FirstNameBox.SendKeys(firstname);
+            pireanregisterpage.FirstNameBox.SendKeys("John");
         }
         public void CreatePireanAccountSetLastName(string lastname)
         {
             PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
-            pireanregisterpage.LastNameBox.SendKeys(lastname);
+            pireanregisterpage.LastNameBox.SendKeys("Doe");
         }
         public void CreatePireanAccountSetEmail(string email)
         {
             PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
-            pireanregisterpage.EmailBox.SendKeys(email);
+            pireanregisterpage.EmailBox.SendKeys("jsinclair.pride@gmail.com");
 
         }
         public void CreatePireanAccountSetPassword(string password)
         {
             PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);            
-            pireanregisterpage.PasswordBox.SendKeys(password);
-            pireanregisterpage.PasswordConfirmBox.SendKeys(password);
+            pireanregisterpage.PasswordBox.SendKeys("Password01");
+            pireanregisterpage.PasswordConfirmBox.SendKeys("Password01");
         }
         public void AckonowledgeandCreatePireanAccount()
         {
@@ -109,6 +109,11 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         {
             InformPage informpage = new InformPage(Driver);
             informpage.StartButton.Click();
+        }
+        public void ClickCheckStatement()
+        {
+            ServiceLandingPage serviceLandingpage = new ServiceLandingPage(Driver);
+            serviceLandingpage.ClickCheckStatement.Click();
         }
         public void ConfirmGatewayCredentials()
         {
@@ -221,7 +226,30 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             accounthomepage.PAYELink.Click();
             PayeSchemesPage payeschemespage = new PayeSchemesPage(Driver);
             payeschemespage.AddPayeButton.Click();
+            payeschemespage.AddPayeDraft.Click();
+            payeschemespage.ContinuePaye.Click();
+            HMRCLoginPage hmrcpage = new HMRCLoginPage(Driver);
+            LoginHmrcCredentials();
+            GrantAuthority();
+            //HMRCResponsePage hmrcresponsepage = new HMRCResponsePage(Driver);
+
         }       
+        public void RemovePayeScheme()
+        {
+            ViewAccount();
+            AccountHomePage accounthomepage = new AccountHomePage(Driver);
+            accounthomepage.PAYELink.Click();
+            PayeSchemesPage payeschemespage = new PayeSchemesPage(Driver);
+            payeschemespage.RemoveScheme.Click();
+            payeschemespage.ConfirmRemoval.Click();
+            payeschemespage.ContinueRemoval.Click();
+            
+        }
+        public void PayeSchemeRemoved()
+        {
+            PayeSchemesPage payeschemesPage = new PayeSchemesPage(Driver);
+            PayeSchemeRemoved();
+        }
         public void viewTransactionsTable()
         {
             TransactionsPage transactionspage = new TransactionsPage(Driver);
