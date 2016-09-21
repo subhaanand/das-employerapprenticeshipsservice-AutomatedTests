@@ -25,6 +25,10 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         {
             Driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["baseUrl"]);
         }
+        public void LoadTempPage()
+        {
+            Driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["tempUrl"]);
+        }
         public void LoginPirean()
         {
             LoadStartPage();
@@ -213,11 +217,11 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         public void ViewExistingPayeSchemes()
         {
             ViewAccount();
-            AccountHomePage accounthomepage = new AccountHomePage(Driver);
-            accounthomepage.PAYELink.Click();
-            PayeSchemesPage payeschemespage = new PayeSchemesPage(Driver);            
-            string existingpayeeschemes = payeschemespage.ListOfPaye.Text;
-            existingpayeeschemes.Contains("111/AA00001 OPTISOURCE TECHNOLOGY SOLUTIONS LIMITED");
+            //AccountHomePage accounthomepage = new AccountHomePage(Driver);
+            //accounthomepage.PAYELink.Click();
+            //PayeSchemesPage payeschemespage = new PayeSchemesPage(Driver);            
+            //string existingpayeeschemes = payeschemespage.ListOfPaye.Text;
+            //existingpayeeschemes.Contains("111/AA00001 OPTISOURCE TECHNOLOGY SOLUTIONS LIMITED");
         }        
         public void AddPayeScheme(string companyNumber)
         {
@@ -230,6 +234,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             payeschemespage.ContinuePaye.Click();
             HMRCLoginPage hmrcpage = new HMRCLoginPage(Driver);
             LoginHmrcCredentials();
+            LoadTempPage();
             GrantAuthority();
             //HMRCResponsePage hmrcresponsepage = new HMRCResponsePage(Driver);
 

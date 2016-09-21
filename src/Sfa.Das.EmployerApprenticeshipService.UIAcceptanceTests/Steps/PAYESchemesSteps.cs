@@ -24,6 +24,12 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
             _navigationsteps.RemovePayeScheme();
         }
 
+        [Then(@"PAYE scheme is removed")]
+        public void ThenPAYESchemeIsRemoved()
+        {
+            _navigationsteps.PayeSchemeRemoved();
+            //ScenarioContext.Current.Pending();
+        }
 
         [Then(@"PAYE scheme is added")]
         public void ThenPAYESchemeIsAdded()
@@ -39,11 +45,5 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
             _navigationsteps.ViewExistingPayeSchemes();
         }
         
-        [Then(@"PAYE scheme is removed")]
-        public void ThenPAYESchemeIsRemoved()
-        {
-            _navigationsteps.PayeSchemeRemoved();
-            //ScenarioContext.Current.Pending();
-        }
     }
 }
