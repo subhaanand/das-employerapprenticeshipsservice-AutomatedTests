@@ -102,6 +102,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PAYESchemes.feature</DependentUpon>
     </Compile>
+    <Compile Include="Regression\PireanComponents1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PireanComponents.feature</DependentUpon>
+    </Compile>
     <Compile Include="Regression\Transactions.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,11 +124,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ManageTeams.feature</DependentUpon>
     </Compile>
-    <Compile Include="Regression\PireanComponents.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PireanComponents.feature</DependentUpon>
-    </Compile>
     <Compile Include="Steps\CoreSettings\NavigationSteps.cs" />
     <Compile Include="Steps\InviteTeamMemberSteps.cs" />
     <Compile Include="Steps\ManageTeamsSteps.cs" />
@@ -139,7 +139,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Regression\EmployerAccount.feature">
-      <Generator>SpecFlow</Generator>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
     </None>
     <None Include="Regression\ManageTeams.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
