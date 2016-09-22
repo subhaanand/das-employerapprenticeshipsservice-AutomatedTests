@@ -25,6 +25,16 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
             }
         }
 
+        public IWebElement CorrectDetails
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var CorrectDetails = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("continue")));
+                return CorrectDetails;
+            }
+        }
+
         public IWebElement DenyButton
         {
             get

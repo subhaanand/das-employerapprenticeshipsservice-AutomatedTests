@@ -38,7 +38,10 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             LoginPage.UsernameBox.SendKeys(username);
             LoginPage.PasswordBox.Clear();
             LoginPage.PasswordBox.SendKeys(password);
-            LoginPage.LoginButton.Click();            
+            LoginPage.LoginButton.Click();
+            ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
+            servicelandingpage.Driver.FindElement(By.LinkText("Log out"));
+
         }
         public void CloseBrowser()
         {
@@ -152,6 +155,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         {
             HMRCResponsePage hmrcresponsepage = new HMRCResponsePage(Driver);
             hmrcresponsepage.AuthoriseButton.Click();
+            hmrcresponsepage.CorrectDetails.Click();
         }
         public void DenyAuthority()
         {
@@ -178,7 +182,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         {
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
             string accountadded = servicelandingpage.AccountAdded.Text;
-            accountadded.Contains(CompanyNameExpected);
+            accountadded.Contains("Account Created");
         }
         public void ViewAccount()
         {
