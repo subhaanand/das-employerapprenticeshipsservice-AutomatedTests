@@ -51,6 +51,25 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
                 return ContinueButton;
             }
         }
+            public IWebElement SignAgreementBox
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var SignAgreementBox = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("userAuthorised")));
+                return SignAgreementBox;
+            }
+        }
+        public IWebElement SignAgreementBtn
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var SignAgreementBtn = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("signAgreement")));
+                return SignAgreementBtn;
+            }
+        }
     }
 }
+
 

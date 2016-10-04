@@ -20,7 +20,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
             get
             {
                 WebDriverWait wait = new WebDriverWait(Driver,TimeSpan.FromSeconds(10));
-                var CompanyName = wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("bold-xlarge")));
+                var CompanyName = wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("inline")));
                 return CompanyName;
             }
 

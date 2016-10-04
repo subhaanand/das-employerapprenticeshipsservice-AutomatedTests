@@ -8,8 +8,9 @@ Scenario: Add PAYE scheme
 	Then PAYE scheme is added
 
 @PAYESchemes @Regression
-Scenario: View PAYE scheme	
-	Given I can view PAYE schemes
+Scenario Outline: View PAYE scheme
+	Given I can view a PAYE scheme
+	Then I can view a PAYE scheme
 
 @PAYESchemes @Regression
 Scenario: Remove PAYE Scheme

@@ -41,7 +41,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages
             get
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-                var AccountAdded = wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("responsive-td")));
+                var AccountAdded = wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("govuk-box-highlight")));
                 return AccountAdded;
             }
         }

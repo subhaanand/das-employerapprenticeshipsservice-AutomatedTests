@@ -124,11 +124,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "AML")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:firstname", "AML")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lastname", "320")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "sfa.aml.test+320@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "warofman65@gmail.com")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password", "Password1")]
         public virtual void RegisterAPireanAccount_AML()
         {
-            this.RegisterAPireanAccount("AML", "320", "sfa.aml.test+320@gmail.com", "Password1", ((string[])(null)));
+            this.RegisterAPireanAccount("AML", "320", "warofman65@gmail.com", "Password1", ((string[])(null)));
 #line hidden
         }
     }

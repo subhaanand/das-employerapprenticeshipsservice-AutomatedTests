@@ -12,13 +12,13 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
 {
     public class CoreSteps
     {
-        
-        private IWebDriver Driver = new ChromeDriver(ConfigurationManager.AppSettings["ChromeDriver"].ToString());               
-              
+
+        private IWebDriver Driver = new ChromeDriver(ConfigurationManager.AppSettings["ChromeDriver"].ToString());
+
         public string username = ConfigurationManager.AppSettings["PireanUsername"];
         public string password = ConfigurationManager.AppSettings["PireanPassword"];
         public string CompanyNumber = ConfigurationManager.AppSettings["CompanyNumber"];
-        public string CompanyNameExpected = ConfigurationManager.AppSettings["CompanyName"];
+        public string CompanyNameExpected = ConfigurationManager.AppSettings["CompanyNameExpected"];
         public string HMRCUsername = ConfigurationManager.AppSettings["HMRCUN"];
         public string HMRCPassword = ConfigurationManager.AppSettings["HMRCPW"];
 
@@ -28,6 +28,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         }
         public void LoadTempPage()
         {
+            Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             Driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["tempUrl"]);
         }
         public void LoginPirean()
@@ -47,47 +48,50 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         public void CloseBrowser()
         {
             Driver.Quit();
-        }        
+        }
         public void CreateADasAccount()
         {
             LoginPirean();
             ClickCreateAccountButton();
             ClickCheckStatement();
             ClickStartButton();
-            ConfirmGatewayCredentials();
             SearchForCompany();
-            Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));//wait for company house to return
-            VerifyCompany();
             LoginHmrcCredentials();
             GrantAuthority();//empref restriction means this can only run once
-            /*DenyAuthority();*/
-            ApproveAccountCreation();
-            //DenyAccountCreation();
-            //Logout();
+            Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));//wait for company house to return
+            VerifyCompany();
+            AccountCreationApprovalPage accountcreationapprovalpage = new AccountCreationApprovalPage(Driver);
+            accountcreationapprovalpage.SignAgreementBox.Click();
+            accountcreationapprovalpage.SignAgreementBtn.Click();
             CheckAccountNameAdded();
 
+            //ApproveAccountCreation();
+            /*DenyAuthority();*/
+            //DenyAccountCreation();
+            //ConfirmGatewayCredentials();
+            //Logout();
         }
         public void CreatePireanAccountSetFirstName(string firstname)
         {
             PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
-            pireanregisterpage.FirstNameBox.SendKeys("John");
+            pireanregisterpage.FirstNameBox.SendKeys(firstname);
         }
         public void CreatePireanAccountSetLastName(string lastname)
         {
             PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
-            pireanregisterpage.LastNameBox.SendKeys("Doe");
+            pireanregisterpage.LastNameBox.SendKeys(lastname);
         }
         public void CreatePireanAccountSetEmail(string email)
         {
             PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
-            pireanregisterpage.EmailBox.SendKeys("jsinclair.pride@gmail.com");
+            pireanregisterpage.EmailBox.SendKeys(email);
 
         }
         public void CreatePireanAccountSetPassword(string password)
         {
-            PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);            
-            pireanregisterpage.PasswordBox.SendKeys("Password01");
-            pireanregisterpage.PasswordConfirmBox.SendKeys("Password01");
+            PireanRegisterPage pireanregisterpage = new PireanRegisterPage(Driver);
+            pireanregisterpage.PasswordBox.SendKeys(password);
+            pireanregisterpage.PasswordConfirmBox.SendKeys(password);
         }
         public void AckonowledgeandCreatePireanAccount()
         {
@@ -156,7 +160,6 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         {
             HMRCResponsePage hmrcresponsepage = new HMRCResponsePage(Driver);
             hmrcresponsepage.AuthoriseButton.Click();
-            hmrcresponsepage.CorrectDetails.Click();
         }
         public void DenyAuthority()
         {
@@ -166,10 +169,13 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         public void ApproveAccountCreation()
         {
             AccountCreationApprovalPage accountcreationapprovalpage = new AccountCreationApprovalPage(Driver);
-            string actualcompanynamedisplayed = accountcreationapprovalpage.CompanyNameForAccount.Text;
-            StringAssert.Contains(CompanyNameExpected, actualcompanynamedisplayed);
-            accountcreationapprovalpage.YesOption.Click();
-            accountcreationapprovalpage.ContinueButton.Click();
+            accountcreationapprovalpage.SignAgreementBox.Click();
+            accountcreationapprovalpage.SignAgreementBtn.Click();
+
+            //string actualcompanynamedisplayed = accountcreationapprovalpage.CompanyNameForAccount.Text;
+            //StringAssert.Contains(CompanyNameExpected, actualcompanynamedisplayed);
+            //accountcreationapprovalpage.YesOption.Click();
+            //accountcreationapprovalpage.ContinueButton.Click();
         }
         public void DenyAccountCreation()
         {
@@ -189,9 +195,8 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
         {
             LoginPirean();
             ServiceLandingPage servicelandingpage = new ServiceLandingPage(Driver);
-            CheckAccountNameAdded();
             servicelandingpage.OpenAccountLink.Click();
-            
+
 
         }
         public void Quit()
@@ -210,7 +215,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             accounthomepage.FundingLink.Displayed.Equals(true);
             accounthomepage.PAYELink.Displayed.Equals(true);
             accounthomepage.TeamLink.Displayed.Equals(true);
-        }        
+        }
         public void viewTransactionsPage()
         {
             ViewAccount();
@@ -218,16 +223,16 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             accounthomepage.FundingLink.Click();
             TransactionsPage transactionspage = new TransactionsPage(Driver);
             transactionspage.TransactionsTable.Displayed.Equals(true);
-        }        
+        }
         public void ViewExistingPayeSchemes()
         {
             ViewAccount();
-            //AccountHomePage accounthomepage = new AccountHomePage(Driver);
-            //accounthomepage.PAYELink.Click();
-            //PayeSchemesPage payeschemespage = new PayeSchemesPage(Driver);            
-            //string existingpayeeschemes = payeschemespage.ListOfPaye.Text;
-            //existingpayeeschemes.Contains("111/AA00001 OPTISOURCE TECHNOLOGY SOLUTIONS LIMITED");
-        }        
+            AccountHomePage accounthomepage = new AccountHomePage(Driver);
+            accounthomepage.PAYELink.Click();
+            PayeSchemesPage payeschemespage = new PayeSchemesPage(Driver);            
+            string existingpayeeschemes = payeschemespage.ListOfPaye.Text;
+            existingpayeeschemes.Contains("111/AA00001 OPTISOURCE TECHNOLOGY SOLUTIONS LIMITED");
+        }
         public void AddPayeScheme(string companyNumber)
         {
             ViewAccount();
@@ -239,11 +244,23 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             payeschemespage.ContinuePaye.Click();
             HMRCLoginPage hmrcpage = new HMRCLoginPage(Driver);
             LoginHmrcCredentials();
-            LoadTempPage();
             GrantAuthority();
+            //LoadTempPage();
+            HMRCResponsePage hmrcresponsepage = new HMRCResponsePage(Driver);
+            hmrcresponsepage.AuthoriseButton.Click();
+            PayeSchemesPage payeschemepage = new PayeSchemesPage(Driver);
+            payeschemepage.ChooseExistingCompany.Click();
+            hmrcresponsepage.AuthoriseButton.Click();
+            hmrcresponsepage.AuthoriseButton.Click();
             //HMRCResponsePage hmrcresponsepage = new HMRCResponsePage(Driver);
 
-        }       
+        }
+        public void PayeSchemeAdded()
+        {
+            PayeSchemesPage payeschemepage = new PayeSchemesPage(Driver);
+            string payeadded = payeschemepage.PayeSchemeRemoved.Text;
+            payeadded.Contains("has been added to your account");
+        }
         public void RemovePayeScheme()
         {
             ViewAccount();
@@ -253,19 +270,20 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             payeschemespage.RemoveScheme.Click();
             payeschemespage.ConfirmRemoval.Click();
             payeschemespage.ContinueRemoval.Click();
-            
         }
         public void PayeSchemeRemoved()
         {
-            PayeSchemesPage payeschemesPage = new PayeSchemesPage(Driver);
-            PayeSchemeRemoved();
+            PayeSchemesPage payeschemespage = new PayeSchemesPage(Driver);
+            string payeremoved = payeschemespage.PayeSchemeRemoved.Text;
+            payeremoved.Contains("You've removed");
+
         }
         public void viewTransactionsTable()
         {
             TransactionsPage transactionspage = new TransactionsPage(Driver);
             transactionspage.TransactionsTable.Displayed.Equals(true);
             transactionspage.AnyViewLink.Click();
-            
+
         }
         public void viewTeamList()
         {
@@ -299,7 +317,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             string teammembers = teamviewpage.TeamList.Text;
             teammembers.Contains(username);
             teamviewpage.ViewSecondMember.Click();
-            
+
         }
         public void CancelInvitation()
         {
@@ -317,7 +335,7 @@ namespace Sfa.Das.EmployerAprrenticeshipService.UIAcceptanceTests.Steps.Navigati
             TeamViewPage teamviewpage = new TeamViewPage(Driver);
             teamviewpage.TeamList.Displayed.Equals(true);
             teamviewpage.AddUserButton.Click();
-            CreateInvitationPage createinvitationpage = new CreateInvitationPage(Driver);            
+            CreateInvitationPage createinvitationpage = new CreateInvitationPage(Driver);
             createinvitationpage.NameTextBox.Clear();
             createinvitationpage.NameTextBox.SendKeys(username);
             createinvitationpage.EmailTextBox.Clear();

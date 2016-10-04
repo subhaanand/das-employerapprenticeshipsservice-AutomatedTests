@@ -34,16 +34,16 @@ namespace Sfa.Das.EmployerApprenticeshipService.UIAcceptanceTests.Steps
         [Then(@"PAYE scheme is added")]
         public void ThenPAYESchemeIsAdded()
         {
-
-            ScenarioContext.Current.Pending();
+            _navigationsteps.PayeSchemeAdded();
+            //ScenarioContext.Current.Pending();
         }
-
-        [Given(@"I can view PAYE schemes")]
-        [Then(@"I can view  PAYE schemes")]
-        public void ThenICanViewAPAYEScheme()
+        [Given(@"I can view a PAYE scheme")]
+        [Then(@"I can view a PAYE scheme")]
+        public void ThenICanViewPAYESchemes()
         {
             _navigationsteps.ViewExistingPayeSchemes();
         }
-        
+
+
     }
 }

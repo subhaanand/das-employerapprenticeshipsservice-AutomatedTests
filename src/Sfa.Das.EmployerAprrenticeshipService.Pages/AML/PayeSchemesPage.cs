@@ -33,6 +33,15 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
                 return AddPayeDraft;
             }
         }
+        public IWebElement AcceptBtn
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var AcceptBtn = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("accept")));
+                return AcceptBtn;
+            }
+        }
         public IWebElement ContinuePaye
         {
             get
@@ -88,6 +97,16 @@ namespace Sfa.Das.EmployerAprrenticeshipService.Pages.AML
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
                 var PayeSchemeRemoved = wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("govuk-box-highlight")));
                 return PayeSchemeRemoved;
+            }
+        }
+        
+        public IWebElement ChooseExistingCompany
+        {
+            get
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var ChooseExistingCompany = wait.Until(ExpectedConditions.ElementIsVisible(By.Name("selectedCompanyId")));
+                return ChooseExistingCompany;
             }
         }
     }
